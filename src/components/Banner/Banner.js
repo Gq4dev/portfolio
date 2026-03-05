@@ -3,12 +3,10 @@ import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { Link as LinkScroll } from 'react-scroll'
 import { useTranslation } from 'react-i18next'
 
-const CV_URL = '/cv 2026.pdf'
+const CV_URL = '/CV-2026.pdf'
 
 export const Banner = () => {
   const { t } = useTranslation()
-  const publicUrl = process.env.PUBLIC_URL || ''
-  const cvLink = `${publicUrl}${CV_URL}`.replace(/\/+/g, '/')
 
   return (
     <header className="banner" id="/">
@@ -27,7 +25,7 @@ export const Banner = () => {
             {t('banner.viewWork')}
           </LinkScroll>
           <a
-            href={cvLink}
+            href={CV_URL}
             target="_blank"
             rel="noreferrer"
             className="banner-cta banner-cta-secondary"
