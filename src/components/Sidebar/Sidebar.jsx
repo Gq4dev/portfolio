@@ -14,7 +14,7 @@ export const Sidebar = ({ isOpen, toggle }) => {
     // }
     return (
         <aside className={className} onClick={toggle} role="dialog" aria-modal="true" aria-label={t('sidebar.navMenu')}>
-            <button type="button" className="icon" onClick={toggle} aria-label={t('sidebar.closeMenu')}>
+            <button type="button" className="icon" onClick={(e) => { e.stopPropagation(); toggle(); }} aria-label={t('sidebar.closeMenu')}>
                 <FaTimes />
             </button>
             {router.pathname === "/" ? (
