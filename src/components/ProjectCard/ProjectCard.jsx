@@ -1,23 +1,50 @@
 import React from 'react'
-import { FaGithub } from "react-icons/fa";
-import './ProjectCard.css'
+import { FaGithub } from 'react-icons/fa'
+import { getImageUrl } from '../../utils/publicUrl'
+
 export const ProjectCard = ({ props }) => {
-    const { title, img, url, urlGit, subtitle, description } = props
+  const { title, img, url, urlGit, subtitle, description, tech } = props
 
-
-
-return (
+  return (
     <div className="project">
-        <h3 className="project-title">{title}</h3>
-        <img src={`../images/projects/${img}`} alt={title}></img>
-        <div className="project-buttons">
-            <a className="demo-button" href={url} target="_blank" rel="noreferrer">Demo</a>
-            <a href={urlGit}><FaGithub /></a>
-      
+      <h3 className="project-title">{title}</h3>
+      <img
+        src={getImageUrl(`images/projects/${img}`)}
+        alt={title}
+        loading="lazy"
+        width={400}
+        height={250}
+      />
+      <div className="project-buttons">
+        <a
+          className="demo-button"
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`Ver demo de ${title}`}
+        >
+          Demo
+        </a>
+        <a
+          href={urlGit}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`Repositorio de ${title}`}
+        >
+          <FaGithub />
+        </a>
+      </div>
+      {Array.isArray(tech) && tech.length > 0 && (
+        <div className="project-tech">
+          {tech.map((t) => (
+            <span key={t} className="project-tech-tag">
+              {t}
+            </span>
+          ))}
         </div>
-        <h3 className="project-subtitle">{subtitle}</h3>
-        <p className="project-description">{description} </p>
+      )}
+      <h3 className="project-subtitle">{subtitle}</h3>
+      <p className="project-description">{description}</p>
     </div>
-)
+  )
 }
-

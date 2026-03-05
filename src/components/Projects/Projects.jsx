@@ -1,50 +1,59 @@
 import React, { useState, useEffect } from 'react'
 import { ProjectCard } from '../ProjectCard/ProjectCard'
-import { useParams, Link } from 'react-router-dom'
-import './Projects.css'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { getDataUrl, getImageUrl } from '../../utils/publicUrl'
 
+const CATEGORIES = [
+  { id: 'sapui5', label: 'SAP UI5', icon: 'images/categories/logo-avg.png' },
+  { id: 'react', label: 'React', icon: 'images/categories/react.svg' },
+  { id: 'nextjs', label: 'Next.js', icon: 'images/categories/nextjs.svg' },
+]
 
-export const Projects = () => {
-    let params = useParams()
-    const [projects, setProjects] = useState([])
-    const [category, setCategory] = useState(params.cat)
+export const Projects = ({ initialCat }) => {
+  const router = useRouter()
+  const [projects, setProjects] = useState([])
+  const [category, setCategory] = useState(initialCat)
 
-    useEffect(() => {
-        fetch('../data/projects.json')
-            .then(response => response.json())
-            .then(data => {
-                setProjects(data.filter(project => project.category === category))
-            })
-            .catch(error => {
-                console.error('Error al leer el archivo JSON:', error);
-            });
+  useEffect(() => {
+    const cat = router.query.cat || initialCat
+    if (cat) setCategory(cat)
+  }, [router.query.cat, initialCat])
 
-    }, [category])
+  useEffect(() => {
+    fetch(getDataUrl('data/projects.json'))
+      .then((response) => response.json())
+      .then((data) => setProjects(data.filter((p) => p.category === category)))
+      .catch((err) => console.error('Error al cargar proyectos:', err))
+  }, [category])
 
-
-    return (
-        <>
-            <section className="categories-container" id="portfolio">
-                <h2 className="categories-title">Portfolio</h2>
-                <div className='portfolio-icons'>
-                    <ul>
-                        <li onClick={() => setCategory("sapui5")}>
-                            <Link to="/portfolio/sapui5"> <img src="../images/categories/logo-avg.png" alt="" /></Link>
-                        </li>
-                        <li onClick={() => setCategory("react")}>
-                            <Link to="/portfolio/react"> <img src="../images/categories/react.svg" alt="" /></Link>
-                        </li>
-                        <li onClick={() => setCategory("nextjs")} >
-                            <Link to="/portfolio/nextjs"><img src="../images/categories/nextjs.svg" alt="" /></Link>
-                        </li>
-                    </ul>
-                </div>
-                <div className="projects">
-                    {projects.map(project => (
-                        <ProjectCard props={project} />
-                    ))}
-                </div>
-            </section >
-        </>
-    )
+  return (
+    <>
+      <section className="categories-container" id="portfolio">
+        <h2 className="categories-title">Portfolio</h2>
+        <div className="portfolio-icons">
+          <ul role="navigation" aria-label="Filtrar por tecnología">
+            {CATEGORIES.map((cat) => (
+              <li key={cat.id} onClick={() => setCategory(cat.id)}>
+                <Link href={`/portfolio/${cat.id}`} aria-label={cat.label}>
+                  <img
+                    src={getImageUrl(cat.icon)}
+                    alt=""
+                    width={50}
+                    height={50}
+                    loading="lazy"
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="projects">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} props={project} />
+          ))}
+        </div>
+      </section>
+    </>
+  )
 }

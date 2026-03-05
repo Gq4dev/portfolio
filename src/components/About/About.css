@@ -1,8 +1,8 @@
 .about {
   width: 100%;
   height: auto;
-  color: black;
-  background-color: gainsboro;
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
 }
 
 .about-title {
@@ -29,10 +29,8 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: orange solid 1px;
-  background-position: top center;
-  background-size: cover;
-  background-image: url(./../../../public/images/portfolio.jpeg);
+  border: 2px solid var(--accent);
+  object-fit: cover;
 }
 
 .icons-img {
@@ -41,7 +39,7 @@
 }
 
 .bio-title {
-  color: orange;
+  color: var(--accent);
   font-size: 2rem;
 }
 
@@ -71,7 +69,7 @@ h3 {
   margin-top: 0px;
 }
 .info-title {
-  color: orange;
+  color: var(--accent);
 }
 
 .info-subtitle {
@@ -83,7 +81,7 @@ h3 {
 .info-subtitle svg {
   font-size: 2rem;
   margin-right: 15px;
-  color: orange;
+  color: var(--accent);
   vertical-align: middle;
 }
 

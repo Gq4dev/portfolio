@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
+  "banner": {
+    "title": "Guillermo Quattrocchi",
+    "subtitle": "Desarrollador Web Full Stack",
+    "tagline": "React · Node.js · SAP UI5",
+    "viewWork": "Ver mi trabajo",
+    "downloadCV": "Descargar CV",
+    "downloadCVAria": "Descargar CV en PDF"
+  },
+  "about": {
+    "title": "SOBRE MÍ",
+    "bioTitle": "BIO",
+    "bio": "Desarrollador freelance con más de 4 años de experiencia creando aplicaciones web empresariales y digitales. Me especializo como Desarrollador Senior SAP UI5 / Fiori, creando aplicaciones Fiori personalizadas para ecosistemas SAP empresariales, y como desarrollador fullstack React & JavaScript. Actualmente trabajando en dos proyectos paralelos en Argentina. Me apasiona el código limpio, una gran UX, y resolver problemas reales con tecnología.",
+    "workHistory": "Historial Laboral",
+    "fixsur": "Fixsur Inteligencia Aplicada - Buenos Aires, Argentina",
+    "pulpou": "Pulpou - Programa de Protección de Marca (Mercado Libre) - Buenos Aires, Argentina",
+    "altromondo": "Altromondo S.A — Desarrollador Senior SAP UI5 / Fiori",
+    "education": "Educación",
+    "digitalHouse": "Digital House Desarrollador Web Full Stack - Buenos Aires, Argentina",
+    "alkemy": "Aceleracion Alkemy Node JOB READY - Buenos Aires, Argentina",
+    "masterSAP": "Master SAP FIORI - Desarrollo con SAPUI5 - Logali Group",
+    "certificate": "Certificado Logali",
+    "skills": "Habilidades",
+    "languages": "Idiomas",
+    "english": "Inglés",
+    "englishDesc": "Certificado EF SET English 68/100 (C1 Advanced)",
+    "certifications": "Certificaciones",
+    "sapAbap": "SAP ABAP RESTFUL Iniciación",
+    "webinar1": "WEBINAR SAP FIORI SAPUI5 - Desarrollo de aplicaciones - LOGALI Group",
+    "webinar2": "Desarrollo de aplicaciones FIORI con SAPUI5 en SAP BAS - LOGALI Group",
+    "webinar3": "WEBINAR SAP FIORI Gráficos Vizframe con SAPUI5 - LOGALI Group"
+  },
+  "footer": {
+    "followMe": "Sígueme",
+    "letsTalk": "Hablemos por WhatsApp",
+    "letsTalkAria": "Contactar por WhatsApp"
+  },
+  "sidebar": {
+    "navMenu": "Menú de navegación",
+    "closeMenu": "Cerrar menú"
+  }
+}

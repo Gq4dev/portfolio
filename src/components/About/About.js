@@ -1,138 +1,118 @@
-import React from "react";
-import "./About.css";
-import { FaJs, FaReact, FaNodeJs, FaDatabase, FaDocker } from "react-icons/fa";
-import { Skills } from "../Skills/skills";
+import React from 'react'
+import { Skills } from '../Skills/skills'
+import { useTranslation } from 'react-i18next'
+import { getImageUrl } from '../../utils/publicUrl'
+
+const PUBLIC_URL = process.env.PUBLIC_URL || ''
+const PDF_PATH = `${PUBLIC_URL}/files/MasterSapui5.pdf`.replace(/\/+/g, '/')
 
 export const About = () => {
-  const Pdf = "../files/MasterSapui5.pdf";
-  const onResumeClick = () => {
-    window.open(Pdf);
-  };
+  const { t } = useTranslation()
+  const onResumeClick = (e) => {
+    e.preventDefault()
+    window.open(PDF_PATH)
+  }
 
   return (
     <div>
       <section className="about" id="about">
-        <h1 className="about-title"> ABOUT ME</h1>
+        <h1 className="about-title">{t('about.title')}</h1>
         <div className="about-main">
-          <div
+          <img
             className="profile-img"
-            src="./images/portfolio.jpeg"
-            alt="profile-img"
-          ></div>
+            src={getImageUrl('images/portfolio.jpeg')}
+            alt="Guillermo Quattrocchi"
+            width={200}
+            height={200}
+            loading="lazy"
+          />
           <div className="about-bio">
-            <h2 className="bio-title">BIO</h2>
+            <h2 className="bio-title">{t('about.bioTitle')}</h2>
             <p className="bio-description">
-              With almost 20 years of experience in the world of IT support,
-              today I am looking to formally insert myself into the world of
-              programming, I have always been passionate about everything
-              related to computing and today I choose to continue my
-              professional career in this new field.
-              <br /> I am excited to gain more experience in this field and hope
-              that your company can give me the opportunity to join your team.
-              <br /> I am a kind, respectful, creative person, with leadership
-              skills, and motivated to work.{" "}
+              {t('about.bio')}
             </p>
           </div>
         </div>
         <div className="info-sections">
           <div className="info-section">
-            <h2 className="info-title">Work History</h2>
-
+            <h2 className="info-title">{t('about.workHistory')}</h2>
             <h3 className="info-subtitle">
-              Fixsur Inteligencia Aplicada - Buenos Aires, Argentina{" "}
+              {t('about.fixsur')}
             </h3>
             <p className="info-date">12/2008 - 12/2020</p>
-
             <h3 className="info-subtitle">
-              Bocalan Argentina - Buenos Aires, Argentina{" "}
-            </h3>
-            <p className="info-date">12/2013 - 12/2022</p>
-
-            <h3 className="info-subtitle">
-              Pulpou - Brand Protection Program (Mercado Libre) - Buenos Aires,
-              Argentina{" "}
+              {t('about.pulpou')}
             </h3>
             <p className="info-date">04/2023 - Today</p>
+            <h3 className="info-subtitle">
+              {t('about.altromondo')}
+            </h3>
+            <p className="info-date">06/2024 - Today</p>
           </div>
           <div className="info-section">
             <h2 className="info-title">Education</h2>
-
             <h3 className="info-subtitle">
-              Digital House Full Stack Web Developer - Buenos Aires, Argentina{" "}
+              Digital House Full Stack Web Developer - Buenos Aires, Argentina
             </h3>
             <p className="info-date">8/2021 - 12/2021</p>
-
             <h3 className="info-subtitle">
-              {" "}
-              Aceleracion Alkemy Node JOB READY - Buenos Aires, Argentina{" "}
+              Aceleracion Alkemy Node JOB READY - Buenos Aires, Argentina
             </h3>
             <p className="info-date">5/2022 - Finalizado</p>
-
             <h3 className="info-subtitle">
-              {" "}
-              Master SAP FIORI- Desarrollo con SAPUI5 - Logali Group{" "}
+              Master SAP FIORI - Desarrollo con SAPUI5 - Logali Group
             </h3>
             <p className="info-date">1/2023 - 5/2023</p>
-            <a className="certificate" onClick={onResumeClick} href="/">
-              {" "}
-              <p class="info-subtitle"> Logali Certificate</p>
+            <a
+              className="certificate"
+              href="/"
+              onClick={onResumeClick}
+              aria-label={t('about.certificate')}
+            >
+              <p className="info-subtitle">{t('about.certificate')}</p>
             </a>
           </div>
           <div className="info-section">
-            <h2 className="info-title">Skills</h2>
+            <h2 className="info-title">{t('about.skills')}</h2>
             <div className="skills">
               <Skills />
-              {/* <h3 className="info-subtitle"><img className='icons-img' src={Javascript} alt="javascript"/> Javascript </h3>
-                           <h3 className="info-subtitle"><img className="sap-img" src={sap} alt='Sap' />  SAPUI 5 </h3>
-                           <h3 className="info-subtitle"><img className='icons-img' src={Graphql} alt="graphql"/> React </h3>
-                           <h3 className="info-subtitle"><img className='icons-img' src={Graphql} alt="graphql"/> Node.Js </h3>
-                           <h3 className="info-subtitle"><img className='icons-img' src={Graphql} alt="graphql"/> MongoDB </h3>                          
-                           <h3 className="info-subtitle"><img className='icons-img' src={Graphql} alt="graphql"/> Graphql </h3>
-                           <h3 className="info-subtitle"><img className='icons-img' src={Graphql} alt="graphql"/> Docker </h3>
-                           <h3 className="info-subtitle"><img className='icons-img' src={terraform} alt="terraform"/> Terraform </h3>  */}
             </div>
           </div>
           <div className="info-section">
-            <h2 className="info-title">Languages</h2>
-            <h3 className="info-subtitle">Ingles </h3>
+            <h2 className="info-title">{t('about.languages')}</h2>
+            <h3 className="info-subtitle">{t('about.english')}</h3>
             <p className="info-date">
-              EF SET English Certificate 68/100 (C1 Advanced)
+              {t('about.englishDesc')}
             </p>
             <a
               className="certificate"
               href="https://www.efset.org/cert/4AJTB1"
               target="_blank"
               rel="noreferrer"
+              aria-label="Ver certificado EF"
             >
-              {" "}
-              <p class="info-subtitle"> EF Certificate</p>
+              <p className="info-subtitle">EF Certificate</p>
             </a>
           </div>
           <div className="info-section">
-            <h2 className="info-title">Certifications</h2>
-
-            <h3 className="info-subtitle">SAP ABAP RESTFUL Iniciación</h3>
+            <h2 className="info-title">{t('about.certifications')}</h2>
+            <h3 className="info-subtitle">{t('about.sapAbap')}</h3>
             <p className="info-date">Logali Group - 2022</p>
-
             <h3 className="info-subtitle">
-              WEBINAR SAP FIORI SAPUI5 - Desarrollo de aplicaciones - LOGALI
-              Group
+              {t('about.webinar1')}
             </h3>
             <p className="info-date">Logali Group - 2022</p>
-
             <h3 className="info-subtitle">
-              Desarrollo de aplicaciones FIORI con SAPUI5 en SAP BAS - LOGALI
-              Group{" "}
+              {t('about.webinar2')}
             </h3>
             <p className="info-date">Logali Group - 2022</p>
-
             <h3 className="info-subtitle">
-              WEBINAR SAP FIORI Gráficos Vizframe con SAPUI5 - LOGALI Group
+              {t('about.webinar3')}
             </h3>
             <p className="info-date">Logali Group - 2022</p>
           </div>
         </div>
       </section>
     </div>
-  );
-};
+  )
+}

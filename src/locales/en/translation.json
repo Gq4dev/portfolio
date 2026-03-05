@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "banner": {
+    "title": "Guillermo Quattrocchi",
+    "subtitle": "Full Stack Web Developer",
+    "tagline": "React · Node.js · SAP UI5",
+    "viewWork": "View my work",
+    "downloadCV": "Download CV",
+    "downloadCVAria": "Download CV in PDF"
+  },
+  "about": {
+    "title": "ABOUT ME",
+    "bioTitle": "BIO",
+    "bio": "Freelance developer with 4+ years of experience building enterprise and digital web applications. I specialize as a Senior SAP UI5 / Fiori Developer, creating custom Fiori apps for enterprise SAP ecosystems, and as a React & JavaScript fullstack developer. Currently working on two parallel projects in Argentina. I'm passionate about clean code, great UX, and solving real problems with technology.",
+    "workHistory": "Work History",
+    "fixsur": "Fixsur Inteligencia Aplicada - Buenos Aires, Argentina",
+    "pulpou": "Pulpou - Brand Protection Program (Mercado Libre) - Buenos Aires, Argentina",
+    "altromondo": "Altromondo S.A — Senior SAP UI5 / Fiori Developer",
+    "education": "Education",
+    "digitalHouse": "Digital House Full Stack Web Developer - Buenos Aires, Argentina",
+    "alkemy": "Aceleracion Alkemy Node JOB READY - Buenos Aires, Argentina",
+    "masterSAP": "Master SAP FIORI - Desarrollo con SAPUI5 - Logali Group",
+    "certificate": "Logali Certificate",
+    "skills": "Skills",
+    "languages": "Languages",
+    "english": "English",
+    "englishDesc": "EF SET English Certificate 68/100 (C1 Advanced)",
+    "certifications": "Certifications",
+    "sapAbap": "SAP ABAP RESTFUL Iniciación",
+    "webinar1": "WEBINAR SAP FIORI SAPUI5 - Desarrollo de aplicaciones - LOGALI Group",
+    "webinar2": "Desarrollo de aplicaciones FIORI con SAPUI5 en SAP BAS - LOGALI Group",
+    "webinar3": "WEBINAR SAP FIORI Gráficos Vizframe con SAPUI5 - LOGALI Group"
+  },
+  "footer": {
+    "followMe": "Follow me",
+    "letsTalk": "Let's talk on WhatsApp",
+    "letsTalkAria": "Contact via WhatsApp"
+  },
+  "sidebar": {
+    "navMenu": "Navigation menu",
+    "closeMenu": "Close menu"
+  }
+}

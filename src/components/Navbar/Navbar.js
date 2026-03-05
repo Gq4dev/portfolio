@@ -1,78 +1,74 @@
-import React, { useState, useEffect } from 'react'
-import "./Navbar.css"
+import React from 'react'
 import { animateScroll as scroll, Link as LinkS } from 'react-scroll'
-import { FaBars } from "react-icons/fa";
-import { Link, useLocation } from 'react-router-dom';
-
-
+import { FaBars, FaSun, FaMoon } from 'react-icons/fa'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useTheme } from '../../context/ThemeContext'
+import LanguageSelector from '../LanguageSelector.js'
+import { useTranslation } from 'react-i18next'
 
 export const Navbar = ({ toggle }) => {
-  const [scrollNav, setScrollNav] = useState(false)
+  const { t } = useTranslation()
+  const router = useRouter()
+  const { isDark, toggleTheme } = useTheme()
 
-  const location = useLocation()
+  const toggleHome = () => scroll.scrollToTop()
+  const isHome = router.pathname === '/'
 
-  const changeNav = () => {
-    if (window.scrollY >= 80) {
-      setScrollNav(true)
-    } else {
-      setScrollNav(false)
-    }
-  }
-
-  useEffect(() => {
-    window.addEventListener("scroll", changeNav)
-  }, [])
-
-  const toggleHome = () => {
-    scroll.scrollToTop()
-  }
   return (
-
-
-    <div className="navbar">
+    <nav className="navbar" role="navigation" aria-label="Menú principal">
       <div className="navbar-logo">
-        <Link to="/" onClick={toggleHome}> <h1 className='title'><span className='span1'></span><span className='span2'></span></h1></Link>
-        {/* <Link to="/" onClick={toggleHome}>   <img className="navbar-logo" src={logo} alt="logo"></img></Link> */}
+        <Link href="/" onClick={toggleHome} aria-label="Ir al inicio">
+          <h1 className="title">
+            <span className="span1" />
+            <span className="span2" />
+          </h1>
+        </Link>
       </div>
 
-
-      {location.pathname === "/" ? (
+      {isHome ? (
         <div className="navbar-menu">
-          <LinkS to="/" onClick={toggleHome}>
-            Home
-          </LinkS>
-          <LinkS to="about" smooth={true}
-            duration={500}
-            spy={true}
-            exact='true'
-            offset={-80}  >About</LinkS>
-          <LinkS to="portfolio" smooth={true}
-            duration={500}
-            spy={true}
-            exact='true'
-            offset={-80} >Portfolio</LinkS>
-          <LinkS to="contact" smooth={true}
-            duration={500}
-            spy={true}
-            exact='true'
-            offset={-80} >Contact</LinkS>
+          <LinkS to="/" onClick={toggleHome}>{t('nav.home')}</LinkS>
+          <LinkS to="about" smooth duration={500} spy exact="true" offset={-80}>{t('nav.about')}</LinkS>
+          <LinkS to="portfolio" smooth duration={500} spy exact="true" offset={-80}>{t('nav.portfolio')}</LinkS>
+          <LinkS to="contact" smooth duration={500} spy exact="true" offset={-80}>{t('nav.contact')}</LinkS>
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={isDark ? 'Activar modo claro' : 'Activar modo oscuro'}
+            title={isDark ? 'Modo claro' : 'Modo oscuro'}
+          >
+            {isDark ? <FaSun /> : <FaMoon />}
+          </button>
+          <LanguageSelector />
         </div>
       ) : (
         <div className="navbar-menu">
-          <Link to="/" onClick={toggleHome}>
-            Home
-          </Link>
-          <LinkS to="contact" smooth={true}
-            duration={500}
-            spy={true}
-            exact='true'
-            offset={-80} >Contact</LinkS>
+          <Link href="/" onClick={toggleHome}>{t('nav.home')}</Link>
+          <LinkS to="contact" smooth duration={500} spy exact="true" offset={-80}>{t('nav.contact')}</LinkS>
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={isDark ? 'Activar modo claro' : 'Activar modo oscuro'}
+            title={isDark ? 'Modo claro' : 'Modo oscuro'}
+          >
+            {isDark ? <FaSun /> : <FaMoon />}
+          </button>
+          <LanguageSelector />
         </div>
       )}
 
-      <div className="mobile-menu" onClick={toggle}>
+      <button
+        type="button"
+        className="mobile-menu"
+        onClick={toggle}
+        aria-label="Abrir menú"
+        aria-expanded={false}
+      >
         <FaBars />
-      </div>
-    </div>
+      </button>
+    </nav>
   )
 }

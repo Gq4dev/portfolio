@@ -6,7 +6,7 @@
 
 .project-title {
     font-size: 1.5rem;
-    color: orange
+    color: var(--accent);
 }
 
 .project img {
@@ -22,7 +22,7 @@
 }
 
 .project-buttons svg {
-    color: orange;
+    color: var(--accent);
     font-size: 1.5rem;
     margin-left: 5px;
 }
@@ -37,7 +37,21 @@
 }
 
 .demo-button:hover {
-    background-color: orange;
+    background-color: var(--accent);
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0.5rem 0;
+}
+.project-tech-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    background: rgba(255, 165, 0, 0.2);
+    color: inherit;
+    border-radius: 4px;
 }
 @media screen and (min-width: 768px) {
 

@@ -1,22 +1,23 @@
 import React from 'react'
-import './Sidebar.css'
 import { FaTimes } from 'react-icons/fa'
 import { animateScroll as scroll, Link as LinkS } from 'react-scroll'
-import { Link, useLocation } from 'react-router-dom'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useTranslation } from 'react-i18next'
 
 export const Sidebar = ({ isOpen, toggle }) => {
-
-    const location = useLocation()
+  const { t } = useTranslation()
+    const router = useRouter()
     const className = `sidebar-container ${isOpen ? "open" : ""}`;
     // const toggleHome = () => {
     //     scroll.scrollToTop()
     // }
     return (
-        <aside className={className} onClick={toggle}>
-            <div className='icon' onClick={toggle}>
+        <aside className={className} onClick={toggle} role="dialog" aria-modal="true" aria-label={t('sidebar.navMenu')}>
+            <button type="button" className="icon" onClick={toggle} aria-label={t('sidebar.closeMenu')}>
                 <FaTimes />
-            </div>
-            {location.pathname === "/" ? (
+            </button>
+            {router.pathname === "/" ? (
                 <div className='sidebar-wrapper'>
                     <div className='sidebar-menu' to='#'>
                         <LinkS to="/" 
@@ -26,7 +27,7 @@ export const Sidebar = ({ isOpen, toggle }) => {
                          spy={true}
                          exact='true'
                          offset={-80} onClick={toggle}>
-                            Home
+                            {t('nav.home')}
                         </LinkS>
                         <LinkS to="about"
                             className='sidebar-link'
@@ -34,27 +35,27 @@ export const Sidebar = ({ isOpen, toggle }) => {
                             duration={500}
                             spy={true}
                             exact='true'
-                            offset={-80} onClick={toggle} >About</LinkS>
+                            offset={-80} onClick={toggle} >{t('nav.about')}</LinkS>
                         <LinkS to="portfolio"
                             className='sidebar-link'
                             smooth={true}
                             duration={500}
                             spy={true}
                             exact='true'
-                            offset={-80} onClick={toggle} >Portfolio</LinkS>
+                            offset={-80} onClick={toggle} >{t('nav.portfolio')}</LinkS>
                         <LinkS to="contact"
                             className='sidebar-link'
                             smooth={true}
                             duration={500}
                             spy={true}
                             exact='true'
-                            offset={-80} onClick={toggle} >Contact</LinkS>
+                            offset={-80} onClick={toggle} >{t('nav.contact')}</LinkS>
                     </div>
                 </div>
             ) : (
                 <div className='sidebar-menu' to='#'>
-                    <Link className='sidebar-link' to="/" onClick={toggle}>
-                        Home
+                    <Link className='sidebar-link' href="/" onClick={toggle}>
+                        {t('nav.home')}
                     </Link>
                     <LinkS to="contact"
                             className='sidebar-link'
@@ -62,7 +63,7 @@ export const Sidebar = ({ isOpen, toggle }) => {
                             duration={500}
                             spy={true}
                             exact='true'
-                            offset={-80} onClick={toggle} >Contact</LinkS>
+                            offset={-80} onClick={toggle} >{t('nav.contact')}</LinkS>
                 </div>
             )}
         </aside>
