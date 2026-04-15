@@ -58,16 +58,20 @@
 }
 
 .mobile-menu {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 1rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
-    color: var(--accent);
-    background: none;
-    border: none;
-    padding: 0.25rem;
+    color: var(--text-primary);
 }
 
 .span1::before {
@@ -76,7 +80,7 @@
 
 .title {
     color: var(--accent);
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     font-family: 'Days One', sans-serif;
     /* font-family: 'Secular One', sans-serif;
@@ -165,9 +169,5 @@
 
     .mobile-menu {
         display: none;
-    }
-
-    .mobile-menu:hover {
-        color: var(--accent-hover);
     }
 }
