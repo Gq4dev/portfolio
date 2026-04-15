@@ -23,3 +23,5 @@ jobs:
             npm ci
             npm run build
             pm2 restart portfolio || pm2 start npm --name "portfolio" -- start
+            pm2 list
+            pm2 logs portfolio --lines 10 --nostream
