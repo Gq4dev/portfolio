@@ -13,12 +13,9 @@ const CATEGORIES = [
 export const Projects = ({ initialCat }) => {
   const router = useRouter()
   const [projects, setProjects] = useState([])
-  const [category, setCategory] = useState(initialCat)
-
-  useEffect(() => {
-    const cat = router.query.cat || initialCat
-    if (cat) setCategory(cat)
-  }, [router.query.cat, initialCat])
+  // The route is the source of truth for the active filter, so derive it
+  // during render rather than mirroring it into state from an effect.
+  const category = router.query.cat || initialCat
 
   useEffect(() => {
     fetch(getDataUrl('data/projects.json'))
@@ -34,7 +31,7 @@ export const Projects = ({ initialCat }) => {
         <div className="portfolio-icons">
           <ul role="navigation" aria-label="Filtrar por tecnología">
             {CATEGORIES.map((cat) => (
-              <li key={cat.id} onClick={() => setCategory(cat.id)}>
+              <li key={cat.id}>
                 <Link href={`/portfolio/${cat.id}`} aria-label={cat.label}>
                   <img
                     src={getImageUrl(cat.icon)}
