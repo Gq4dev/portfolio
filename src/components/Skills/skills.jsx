@@ -68,14 +68,14 @@ export const Skills = () =>
   skillGroups.map(({ group, img, items }) => (
     <div key={group} className="skill-group">
       <h3 className="skill-group-title">
-        {img && <SkillIcon img={img} />}
         {group}
+        {img && <SkillIcon img={img} />}
       </h3>
       <ul className={`skill-list${img ? ' skill-list--labels' : ''}`}>
         {items.map((item) => (
           <li key={item.name} className="skill-item">
-            {item.img && <SkillIcon img={item.img} />}
             {item.name}
+            {item.img && <SkillIcon img={item.img} />}
           </li>
         ))}
       </ul>
