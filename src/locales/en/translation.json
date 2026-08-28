@@ -7,16 +7,17 @@
   },
   "banner": {
     "title": "Guillermo Quattrocchi",
-    "subtitle": "Full Stack Web Developer",
-    "tagline": "React · Node.js · SAP UI5",
-    "viewWork": "View my work",
+    "subtitle": "Senior SAP UI5 / Fiori Developer",
+    "tagline": "Custom Fiori apps for enterprise SAP ecosystems. Fullstack React & Node when the project calls for it.",
+    "viewWork": "View projects",
     "downloadCV": "Download CV",
-    "downloadCVAria": "Download CV in PDF"
+    "downloadCVAria": "Download CV in PDF",
+    "credentials": "15+ years in IT · 5+ in development · English C1"
   },
   "about": {
     "title": "ABOUT ME",
     "bioTitle": "BIO",
-    "bio": "Freelance developer with 4+ years of experience building enterprise and digital web applications. I specialize as a Senior SAP UI5 / Fiori Developer, creating custom Fiori apps for enterprise SAP ecosystems, and as a React & JavaScript fullstack developer. Currently working on two parallel projects in Argentina. I'm passionate about clean code, great UX, and solving real problems with technology.",
+    "bio": "Senior SAP UI5 / Fiori developer focused on BTP, CAP and Cloud Foundry. I build custom Fiori apps for enterprise SAP ecosystems, and work fullstack with React and Node.js when the project calls for it.\n\nI'm currently running two projects in parallel: Fiori apps and process automation for an oil & gas company, and fullstack development on AWS serverless for Mercado Libre's brand protection platform.\n\nBefore I wrote code I spent 12 years running IT infrastructure, networks and support. That background gives me business and systems context you don't get from a bootcamp.\n\nEnglish C1 (EF SET 68/100).",
     "workHistory": "Work History",
     "fixsur": "Fixsur Inteligencia Aplicada - Buenos Aires, Argentina",
     "pulpou": "Pulpou - Brand Protection Program (Mercado Libre) - Buenos Aires, Argentina",

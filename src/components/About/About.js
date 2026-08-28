@@ -14,9 +14,13 @@ export const About = () => {
         <div className="about-main">
           <div className="about-bio">
             <h2 className="bio-title">{t('about.bioTitle')}</h2>
-            <p className="bio-description">
-              {t('about.bio')}
-            </p>
+            {t('about.bio')
+              .split('\n\n')
+              .map((paragraph) => (
+                <p key={paragraph} className="bio-description">
+                  {paragraph}
+                </p>
+              ))}
           </div>
         </div>
         <div className="info-sections">

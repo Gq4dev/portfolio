@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { Link as LinkScroll } from 'react-scroll'
 import { useTranslation } from 'react-i18next'
 
@@ -14,6 +13,7 @@ export const Banner = () => {
         <h1 className="banner-title">{t('banner.title')}</h1>
         <p className="banner-paragraph">{t('banner.subtitle')}</p>
         <p className="banner-tagline">{t('banner.tagline')}</p>
+        <p className="banner-credentials">{t('banner.credentials')}</p>
         <div className="banner-ctas">
           <LinkScroll
             to="portfolio"
@@ -32,40 +32,6 @@ export const Banner = () => {
             aria-label={t('banner.downloadCVAria')}
           >
             {t('banner.downloadCV')}
-          </a>
-        </div>
-        <div className="banner-icons" role="list">
-          <a
-            href="https://www.linkedin.com/in/guillermoquattrocchi/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://github.com/guillote87"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.instagram.com/gq4dev/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Instagram"
-          >
-            <FaInstagram />
-          </a>
-          <a
-            href="https://api.whatsapp.com/send?phone=5491156150502&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20."
-            target="_blank"
-            rel="noreferrer"
-            aria-label="WhatsApp"
-          >
-            <FaWhatsapp />
           </a>
         </div>
       </div>
