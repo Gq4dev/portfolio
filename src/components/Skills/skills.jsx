@@ -3,24 +3,25 @@ import { getImageUrl } from '../../utils/publicUrl'
 
 // Grouped by how central each stack is to the work, not by vendor: a flat
 // grid of logos gives SAPUI5 and Terraform the same weight and dilutes the
-// specialist signal. Groups with an `img` render the logo once on the
-// heading and list their items as labels.
+// specialist signal. Items always read as labels; a group carries a logo
+// only where one brand actually covers all of it, which is why Fullstack
+// and AI & Automation have none.
 const skillGroups = [
   {
-    group: 'Core SAP',
+    group: 'SAP',
     img: 'sapui5.svg',
     items: [
-      { name: 'SAPUI5' },
-      { name: 'Fiori' },
-      { name: 'OData' },
-      { name: 'BTP' },
-      { name: 'CAP' },
-      { name: 'Cloud Foundry' },
-      { name: 'Build Work Zone' },
-      { name: 'Build Process Automation' },
-      { name: 'Workflow' },
-      { name: 'ABAP for S/4HANA' },
-      { name: 'SAP BAS' },
+      'UI5',
+      'Fiori',
+      'OData',
+      'BTP',
+      'CAP',
+      'BPA',
+      'Cloud Foundry',
+      'Build Work Zone',
+      'Build Process Automation',
+      'Workflow',
+      'SAP BAS',
     ],
   },
   {
@@ -37,11 +38,11 @@ const skillGroups = [
     group: 'Cloud',
     img: 'aws.svg',
     items: [
-      { name: 'Lambda' },
-      { name: 'API Gateway' },
-      { name: 'CloudFront' },
-      { name: 'DynamoDB' },
-      { name: 'Serverless Framework' },
+      'Lambda',
+      'API Gateway',
+      'CloudFront',
+      'DynamoDB',
+      'Serverless Framework',
     ],
   },
   {
@@ -53,31 +54,42 @@ const skillGroups = [
   },
 ]
 
-const SkillIcon = ({ img }) => (
-  <img
-    className="icons-img"
-    src={getImageUrl(`images/icons/${img}`)}
-    alt=""
-    width={40}
-    height={40}
-    loading="lazy"
-  />
-)
-
 export const Skills = () =>
   skillGroups.map(({ group, img, items }) => (
     <div key={group} className="skill-group">
       <h3 className="skill-group-title">
         {group}
-        {img && <SkillIcon img={img} />}
+        {img && (
+          <img
+            className="skill-group-logo"
+            src={getImageUrl(`images/icons/${img}`)}
+            alt=""
+            width={40}
+            height={40}
+            loading="lazy"
+          />
+        )}
       </h3>
-      <ul className={`skill-list${img ? ' skill-list--labels' : ''}`}>
-        {items.map((item) => (
-          <li key={item.name} className="skill-item">
-            {item.name}
-            {item.img && <SkillIcon img={item.img} />}
-          </li>
-        ))}
+      <ul className="skill-list">
+        {items.map((item) => {
+          const { name, img: logo } =
+            typeof item === 'string' ? { name: item } : item
+
+          return (
+            <li key={name} className={`skill-item${logo ? ' skill-item--logo' : ''}`}>
+              {logo && (
+                <img
+                  src={getImageUrl(`images/icons/${logo}`)}
+                  alt=""
+                  width={32}
+                  height={32}
+                  loading="lazy"
+                />
+              )}
+              {name}
+            </li>
+          )
+        })}
       </ul>
     </div>
   ))

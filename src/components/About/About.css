@@ -58,11 +58,18 @@
   gap: var(--space-lg);
 }
 
+/* Title and mark share one row; a single-line heading is not affected
+   by the logos' differing widths the way the item labels were. */
 .skill-group-title {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: var(--space-sm);
   margin-bottom: var(--space-sm);
+}
+
+.skill-group-logo {
+  width: 40px;
+  height: auto;
 }
 
 .skill-list {
@@ -71,27 +78,31 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-sm) var(--space-lg);
+  gap: var(--space-xs);
+  align-items: stretch;
 }
 
+/* One shape for every skill, so the four groups read as one system. */
 .skill-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--space-sm);
+  justify-content: flex-end;
+  gap: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
   color: var(--text-secondary);
 }
 
-/* Labels start at the left edge like their heading: logos vary in width
-   (the SAP mark is 92x45, the rest are square), so leading with them left
-   the text ragged. */
-.skill-list--labels {
-  padding-left: var(--space-md);
-}
-
-.skill-list--labels .skill-item {
-  padding: var(--space-xs) var(--space-sm);
-  border: 1px solid var(--border);
-  border-radius: var(--space-xs);
+/* Stacked rather than inline: the logos differ in width, so setting
+   them beside the name left every label on a different left edge. */
+.skill-item--logo img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }
 
 h3 {
