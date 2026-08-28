@@ -2,7 +2,7 @@ import React from 'react'
 import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 
-const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=1156150502&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20.'
+const WHATSAPP_URL = 'https://api.whatsapp.com/send?phone=5491156150502&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20.'
 
 export const Footer = () => {
   const { t } = useTranslation()
