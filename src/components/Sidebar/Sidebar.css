@@ -12,11 +12,15 @@
   transition: 0.3s ease-in-out;
   opacity: 1;
   top: -100%;
+  /* Off-screen is not hidden: without this the closed menu stays in the tab
+     order and in the accessibility tree. */
+  visibility: hidden;
 }
 
 .sidebar-container.open {
   opacity: 1;
   top: 0;
+  visibility: visible;
 }
 
 /* CloseIcon */
@@ -40,18 +44,13 @@
   color: var(--text-primary);
 }
 
-/* SidebarMenu */
+/* SidebarMenu — sized by its items: the row count used to be hardcoded to
+   six for a menu that renders four links, or two on inner pages. */
 .sidebar-menu {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(6, 80px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
   text-align: center;
-}
-
-@media screen and (max-width: 480px) {
-  .sidebar-menu {
-    grid-template-rows: repeat(6, 60px);
-  }
 }
 
 /* SidebarLink */
@@ -59,6 +58,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: var(--space-sm) 0;
   font-size: 1.5rem;
   text-decoration: none;
   list-style: none;

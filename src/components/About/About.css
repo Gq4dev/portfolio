@@ -41,15 +41,15 @@
 }
 
 .info-sections {
-  padding-right: 4px;
   margin: auto;
   width: var(--container);
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: var(--space-xl);
 }
 
 .info-section {
-  padding: 10px;
-  margin: 10px;
+  min-width: 0;
 }
 
 .skills {
@@ -140,18 +140,6 @@ h3 {
     font-size: 1.5rem;
   }
 
-  .about-title {
-    font-size: 4rem;
-  }
-
-  .info-sections {
-    display: flex;
-    align-items: unset;
-  }
-
-  .info-section {
-    width: 500px;
-  }
 }
 
 .training-more {

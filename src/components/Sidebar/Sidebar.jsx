@@ -19,7 +19,7 @@ export const Sidebar = ({ isOpen, toggle }) => {
             </button>
             {router.pathname === "/" ? (
                 <div className='sidebar-wrapper'>
-                    <div className='sidebar-menu' to='#'>
+                    <div className='sidebar-menu'>
                         <LinkS to="/" 
                          className='sidebar-link'
                          smooth={true}
@@ -53,7 +53,7 @@ export const Sidebar = ({ isOpen, toggle }) => {
                     </div>
                 </div>
             ) : (
-                <div className='sidebar-menu' to='#'>
+                <div className='sidebar-menu'>
                     <Link className='sidebar-link' href="/" onClick={toggle}>
                         {t('nav.home')}
                     </Link>
