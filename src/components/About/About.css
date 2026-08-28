@@ -25,14 +25,6 @@
   width: 90%;
 }
 
-.profile-img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 2px solid var(--accent);
-  object-fit: cover;
-}
-
 .icons-img {
   width: 40px;
   margin-right: 15px;
@@ -98,7 +90,7 @@ h3 {
   }
 
   .about-bio {
-    width: 70%;
+    width: 100%;
   }
 
   .bio-description {

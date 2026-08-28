@@ -1,7 +1,6 @@
 import React from 'react'
 import { Skills } from '../Skills/skills'
 import { useTranslation } from 'react-i18next'
-import { getImageUrl } from '../../utils/publicUrl'
 
 const PUBLIC_URL = process.env.PUBLIC_URL || ''
 const PDF_PATH = `${PUBLIC_URL}/files/MasterSapui5.pdf`.replace(/\/+/g, '/')
@@ -18,14 +17,6 @@ export const About = () => {
       <section className="about" id="about">
         <h1 className="about-title">{t('about.title')}</h1>
         <div className="about-main">
-          <img
-            className="profile-img"
-            src={getImageUrl('images/portfolio.jpeg')}
-            alt="Guillermo Quattrocchi"
-            width={200}
-            height={200}
-            loading="lazy"
-          />
           <div className="about-bio">
             <h2 className="bio-title">{t('about.bioTitle')}</h2>
             <p className="bio-description">
@@ -37,9 +28,9 @@ export const About = () => {
           <div className="info-section">
             <h2 className="info-title">{t('about.workHistory')}</h2>
             <h3 className="info-subtitle">
-              {t('about.fixsur')}
+              {t('about.softtek')}
             </h3>
-            <p className="info-date">12/2008 - 12/2020</p>
+            <p className="info-date">07/2026 - Today</p>
             <h3 className="info-subtitle">
               {t('about.pulpou')}
             </h3>
@@ -47,22 +38,30 @@ export const About = () => {
             <h3 className="info-subtitle">
               {t('about.altromondo')}
             </h3>
-            <p className="info-date">06/2024 - Today</p>
+            <p className="info-date">06/2024 - 06/2026</p>
+            <h3 className="info-subtitle">
+              {t('about.fixsur')}
+            </h3>
+            <p className="info-date">12/2008 - 12/2020</p>
           </div>
           <div className="info-section">
             <h2 className="info-title">Education</h2>
             <h3 className="info-subtitle">
-              Digital House Full Stack Web Developer - Buenos Aires, Argentina
+              Taller Automatización SAP con n8n e IA Agéntica
             </h3>
-            <p className="info-date">8/2021 - 12/2021</p>
+            <p className="info-date">6/2026</p>
             <h3 className="info-subtitle">
-              Aceleracion Alkemy Node JOB READY - Buenos Aires, Argentina
+              SAP BTP CAP - Cloud Application Programming Model
             </h3>
-            <p className="info-date">5/2022 - Finalizado</p>
+            <p className="info-date">5/2026</p>
+            <h3 className="info-subtitle">
+              SAP BTP - Administración, Seguridad y Conectividad - Logali Group
+            </h3>
+            <p className="info-date">4/2026</p>
             <h3 className="info-subtitle">
               Master SAP FIORI - Desarrollo con SAPUI5 - Logali Group
             </h3>
-            <p className="info-date">1/2023 - 5/2023</p>
+            <p className="info-date">5/2023</p>
             <a
               className="certificate"
               href="/"
@@ -71,6 +70,14 @@ export const About = () => {
             >
               <p className="info-subtitle">{t('about.certificate')}</p>
             </a>
+            <h3 className="info-subtitle">
+              Aceleracion Alkemy Node JOB READY - Buenos Aires, Argentina
+            </h3>
+            <p className="info-date">5/2022</p>
+            <h3 className="info-subtitle">
+              Digital House Full Stack Web Developer - Buenos Aires, Argentina
+            </h3>
+            <p className="info-date">12/2021</p>
           </div>
           <div className="info-section">
             <h2 className="info-title">{t('about.skills')}</h2>
@@ -97,19 +104,19 @@ export const About = () => {
           <div className="info-section">
             <h2 className="info-title">{t('about.certifications')}</h2>
             <h3 className="info-subtitle">{t('about.sapAbap')}</h3>
-            <p className="info-date">Logali Group - 2022</p>
+            <p className="info-date">2022</p>
             <h3 className="info-subtitle">
               {t('about.webinar1')}
             </h3>
-            <p className="info-date">Logali Group - 2022</p>
+            <p className="info-date">2022</p>
             <h3 className="info-subtitle">
               {t('about.webinar2')}
             </h3>
-            <p className="info-date">Logali Group - 2022</p>
+            <p className="info-date">2022</p>
             <h3 className="info-subtitle">
               {t('about.webinar3')}
             </h3>
-            <p className="info-date">Logali Group - 2022</p>
+            <p className="info-date">2022</p>
           </div>
         </div>
       </section>
