@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaTimes } from 'react-icons/fa'
 import { animateScroll as scroll, Link as LinkS } from 'react-scroll'
 import Link from 'next/link'
@@ -9,11 +9,34 @@ export const Sidebar = ({ isOpen, toggle }) => {
   const { t } = useTranslation()
     const router = useRouter()
     const className = `sidebar-container ${isOpen ? "open" : ""}`;
+
+    // The aside declares aria-modal, so Escape has to dismiss it —
+    // otherwise keyboard users have only a mouse target to get out.
+    useEffect(() => {
+        if (!isOpen) return undefined
+        const onKeyDown = (e) => {
+            if (e.key === 'Escape') toggle()
+        }
+        document.addEventListener('keydown', onKeyDown)
+        return () => document.removeEventListener('keydown', onKeyDown)
+    }, [isOpen, toggle])
     // const toggleHome = () => {
     //     scroll.scrollToTop()
     // }
     return (
-        <aside className={className} onClick={toggle} role="dialog" aria-modal="true" aria-label={t('sidebar.navMenu')}>
+        <aside
+            className={className}
+            // Only a click on the backdrop itself closes. Handing this to
+            // every descendant meant the close button and the links fired
+            // toggle twice — once themselves, once on the way up — which
+            // cancelled out and left the menu open.
+            onClick={(e) => {
+                if (e.target === e.currentTarget) toggle()
+            }}
+            role="dialog"
+            aria-modal="true"
+            aria-label={t('sidebar.navMenu')}
+        >
             <button type="button" className="icon" onClick={toggle} aria-label={t('sidebar.closeMenu')}>
                 <FaTimes />
             </button>

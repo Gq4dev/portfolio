@@ -64,6 +64,15 @@ code {
 
 /* Focus visible para accesibilidad */
 a:focus-visible,
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
