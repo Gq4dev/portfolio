@@ -7,12 +7,11 @@
   },
   "banner": {
     "title": "Guillermo Quattrocchi",
-    "subtitle": "Senior SAP UI5 / Fiori & Fullstack Developer",
+    "subtitle": "Senior SAP BTP Developer | React & Node.js | 15+ years in IT (5+ Dev) | English C1",
     "tagline": "Custom Fiori apps for enterprise SAP ecosystems. Fullstack React & Node when the project calls for it.",
     "viewWork": "View projects",
     "downloadCV": "Download CV",
-    "downloadCVAria": "Download CV in PDF",
-    "credentials": "15+ years in IT · 5+ in development · English C1"
+    "downloadCVAria": "Download CV in PDF"
   },
   "about": {
     "title": "ABOUT ME",

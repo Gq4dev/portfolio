@@ -10,14 +10,14 @@ export default function Document() {
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gq4dev.com/" />
-        <meta property="og:title" content="Guillermo Quattrocchi | Senior SAP UI5 / Fiori Developer" />
+        <meta property="og:title" content="Guillermo Quattrocchi | Senior SAP BTP Developer" />
         <meta property="og:description" content="SAP UI5, Fiori, BTP y CAP. 15+ años en IT, 5+ en desarrollo." />
         <meta property="og:image" content="/images/portfolio.jpeg" />
         <meta property="og:locale" content="es_ES" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Guillermo Quattrocchi | Senior SAP UI5 / Fiori Developer" />
+        <meta name="twitter:title" content="Guillermo Quattrocchi | Senior SAP BTP Developer" />
         <meta name="twitter:description" content="SAP UI5, Fiori, BTP y CAP. 15+ años en IT, 5+ en desarrollo." />
         <meta name="twitter:image" content="/images/portfolio.jpeg" />
 
