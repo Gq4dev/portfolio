@@ -26,7 +26,7 @@
     "work": [
       {
         "company": "Softtek / YPF",
-        "role": "Senior SAP UI5 & Automation Developer",
+        "role": "Desarrollador BTP, CAP, SAPUI5 & BPA",
         "period": "Jul 2026 – Presente · Buenos Aires, Argentina",
         "summary": "Desarrollo y extensión de aplicaciones Fiori a medida y automatización de procesos de negocio sobre ecosistemas SAP enterprise.",
         "highlights": []
@@ -109,7 +109,10 @@
         "highlights": []
       }
     ],
-    "showDetail": "Ver proyectos"
+    "showDetail": "Ver proyectos",
+    "languages": "Idiomas",
+    "english": "Inglés",
+    "englishDesc": "Certificado EF SET English 68/100 (C1 Advanced)"
   },
   "footer": {
     "followMe": "Sígueme",

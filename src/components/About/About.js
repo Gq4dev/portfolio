@@ -16,7 +16,6 @@ const TRAINING = [
   { title: 'Desarrollo de aplicaciones FIORI con SAPUI5 en SAP BAS - Logali Group', date: '2022' },
   { title: 'Aceleración Alkemy Node JOB READY - Buenos Aires, Argentina', date: '5/2022' },
   { title: 'Digital House Full Stack Web Developer - Buenos Aires, Argentina', date: '12/2021' },
-  { title: 'EF SET English C1 - 68/100', date: '2023', certificate: EF_CERT_URL },
 ]
 
 const TrainingEntry = ({ item, label }) => (
@@ -106,6 +105,20 @@ export const About = () => {
                 <TrainingEntry key={item.title} item={item} label={t('about.certificate')} />
               ))}
             </details>
+          </div>
+          <div className="info-section">
+            <h2 className="info-title">{t('about.languages')}</h2>
+            <h3 className="info-subtitle">{t('about.english')}</h3>
+            <p className="info-date">{t('about.englishDesc')}</p>
+            <a
+              className="certificate"
+              href={EF_CERT_URL}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={t('about.english')}
+            >
+              EF Certificate
+            </a>
           </div>
           <div className="info-section">
             <h2 className="info-title">{t('about.skills')}</h2>
