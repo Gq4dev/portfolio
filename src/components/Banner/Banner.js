@@ -12,7 +12,6 @@ export const Banner = () => {
       <div className="banner-info">
         <h1 className="banner-title">{t('banner.title')}</h1>
         <p className="banner-paragraph">{t('banner.subtitle')}</p>
-        <p className="banner-tagline">{t('banner.tagline')}</p>
         <div className="banner-ctas">
           <LinkScroll
             to="portfolio"

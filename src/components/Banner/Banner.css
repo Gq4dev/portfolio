@@ -41,19 +41,7 @@
     color: var(--text-primary);
     margin-right: 4px;
 }
-.banner-tagline {
-    font-size: 0.9rem;
-    opacity: 0.85;
-    margin: 0.5rem 0 0.5rem;
-}
 
-/* Years and language sit below the pitch: they qualify it, they are not it. */
-.banner-credentials {
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
-    color: var(--accent);
-    margin: 0 0 1rem;
-}
 .banner-ctas {
     display: flex;
     flex-wrap: wrap;
@@ -104,11 +92,7 @@
 .banner-paragraph {
         font-size: 2rem;
     }
-    .banner-tagline {
-        font-size: 1rem;
-        opacity: 0.9;
-        margin-top: 0.25rem;
-    }
+    
     .banner-ctas {
         gap: 1rem;
     }
