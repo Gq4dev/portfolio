@@ -23,19 +23,10 @@
     "pulpou": "Pulpou - Brand Protection Program (Mercado Libre) - Buenos Aires, Argentina",
     "altromondo": "Altromondo S.A — Senior SAP UI5 / Fiori Developer",
     "softtek": "Softtek - YPF - Buenos Aires, Argentina",
-    "education": "Education",
-    "digitalHouse": "Digital House Full Stack Web Developer - Buenos Aires, Argentina",
-    "alkemy": "Aceleracion Alkemy Node JOB READY - Buenos Aires, Argentina",
-    "masterSAP": "Master SAP FIORI - Desarrollo con SAPUI5 - Logali Group",
     "certificate": "Logali Certificate",
     "skills": "Skills",
-    "languages": "Languages",
-    "english": "English",
-    "englishDesc": "EF SET English Certificate 68/100 (C1 Advanced)",
-    "certifications": "Certifications",
-    "btpCap": "SAP BTP CAP - Cloud Application Programming Model - Logali Group",
-    "btpAdmin": "SAP BTP - Administración, Seguridad y Conectividad - Logali Group",
-    "fioriBas": "Desarrollo de aplicaciones FIORI con SAPUI5 en SAP BAS - Logali Group"
+    "training": "Training & certifications",
+    "showMore": "Show earlier training"
   },
   "footer": {
     "followMe": "Follow me",

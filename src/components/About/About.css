@@ -150,3 +150,18 @@ h3 {
     width: 500px;
   }
 }
+
+.training-more {
+  margin-top: var(--space-md);
+}
+
+.training-more summary {
+  cursor: pointer;
+  color: var(--link);
+  font-weight: bold;
+}
+
+.training-more summary:hover,
+.training-more summary:focus-visible {
+  color: var(--link-hover);
+}

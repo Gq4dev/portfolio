@@ -3,6 +3,39 @@ import { Skills } from '../Skills/skills'
 import { useTranslation } from 'react-i18next'
 
 const PDF_PATH = '/files/MasterSapui5.pdf'
+const EF_CERT_URL = 'https://www.efset.org/cert/4AJTB1'
+
+// Newest first. The four most recent are SAP, which is what the profile
+// leads with; everything older sits behind a disclosure.
+const VISIBLE_TRAINING = 4
+const TRAINING = [
+  { title: 'Taller Automatización SAP con n8n e IA Agéntica - Logali Group', date: '6/2026' },
+  { title: 'SAP BTP CAP - Cloud Application Programming Model - Logali Group', date: '5/2026' },
+  { title: 'SAP BTP - Administración, Seguridad y Conectividad - Logali Group', date: '4/2026' },
+  { title: 'Master SAP FIORI - Desarrollo con SAPUI5 - Logali Group', date: '5/2023', certificate: PDF_PATH },
+  { title: 'Desarrollo de aplicaciones FIORI con SAPUI5 en SAP BAS - Logali Group', date: '2022' },
+  { title: 'Aceleración Alkemy Node JOB READY - Buenos Aires, Argentina', date: '5/2022' },
+  { title: 'Digital House Full Stack Web Developer - Buenos Aires, Argentina', date: '12/2021' },
+  { title: 'EF SET English C1 - 68/100', date: '2023', certificate: EF_CERT_URL },
+]
+
+const TrainingEntry = ({ item, label }) => (
+  <>
+    <h3 className="info-subtitle">{item.title}</h3>
+    <p className="info-date">{item.date}</p>
+    {item.certificate && (
+      <a
+        className="certificate"
+        href={item.certificate}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`${label} — ${item.title}`}
+      >
+        {label}
+      </a>
+    )}
+  </>
+)
 
 export const About = () => {
   const { t } = useTranslation()
@@ -44,77 +77,22 @@ export const About = () => {
             <p className="info-date">12/2008 - 12/2020</p>
           </div>
           <div className="info-section">
-            <h2 className="info-title">Education</h2>
-            <h3 className="info-subtitle">
-              Taller Automatización SAP con n8n e IA Agéntica - Logali Group
-            </h3>
-            <p className="info-date">6/2026</p>
-            <h3 className="info-subtitle">
-              SAP BTP CAP - Cloud Application Programming Model - Logali Group
-            </h3>
-            <p className="info-date">5/2026</p>
-            <h3 className="info-subtitle">
-              SAP BTP - Administración, Seguridad y Conectividad - Logali Group
-            </h3>
-            <p className="info-date">4/2026</p>
-            <h3 className="info-subtitle">
-              Master SAP FIORI - Desarrollo con SAPUI5 - Logali Group
-            </h3>
-            <p className="info-date">5/2023</p>
-            <a
-              className="certificate"
-              href={PDF_PATH}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={t('about.certificate')}
-            >
-              <p className="info-subtitle">{t('about.certificate')}</p>
-            </a>
-            <h3 className="info-subtitle">
-              Aceleracion Alkemy Node JOB READY - Buenos Aires, Argentina
-            </h3>
-            <p className="info-date">5/2022</p>
-            <h3 className="info-subtitle">
-              Digital House Full Stack Web Developer - Buenos Aires, Argentina
-            </h3>
-            <p className="info-date">12/2021</p>
+            <h2 className="info-title">{t('about.training')}</h2>
+            {TRAINING.slice(0, VISIBLE_TRAINING).map((item) => (
+              <TrainingEntry key={item.title} item={item} label={t('about.certificate')} />
+            ))}
+            <details className="training-more">
+              <summary>{t('about.showMore')}</summary>
+              {TRAINING.slice(VISIBLE_TRAINING).map((item) => (
+                <TrainingEntry key={item.title} item={item} label={t('about.certificate')} />
+              ))}
+            </details>
           </div>
           <div className="info-section">
             <h2 className="info-title">{t('about.skills')}</h2>
             <div className="skills">
               <Skills />
             </div>
-          </div>
-          <div className="info-section">
-            <h2 className="info-title">{t('about.languages')}</h2>
-            <h3 className="info-subtitle">{t('about.english')}</h3>
-            <p className="info-date">
-              {t('about.englishDesc')}
-            </p>
-            <a
-              className="certificate"
-              href="https://www.efset.org/cert/4AJTB1"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Ver certificado EF"
-            >
-              <p className="info-subtitle">EF Certificate</p>
-            </a>
-          </div>
-          <div className="info-section">
-            <h2 className="info-title">{t('about.certifications')}</h2>
-            <h3 className="info-subtitle">
-              {t('about.btpCap')}
-            </h3>
-            <p className="info-date">5/2026</p>
-            <h3 className="info-subtitle">
-              {t('about.btpAdmin')}
-            </h3>
-            <p className="info-date">4/2026</p>
-            <h3 className="info-subtitle">
-              {t('about.fioriBas')}
-            </h3>
-            <p className="info-date">2022</p>
           </div>
         </div>
       </section>
