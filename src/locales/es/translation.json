@@ -7,7 +7,7 @@
   },
   "banner": {
     "title": "Guillermo Quattrocchi",
-    "subtitle": "Senior SAP UI5 / Fiori Developer",
+    "subtitle": "Senior SAP UI5 / Fiori & Fullstack Developer",
     "tagline": "Apps Fiori a medida para ecosistemas SAP enterprise. Fullstack React & Node cuando el proyecto lo pide.",
     "viewWork": "Ver proyectos",
     "downloadCV": "Descargar CV",
@@ -17,16 +17,99 @@
   "about": {
     "title": "SOBRE MÍ",
     "bioTitle": "BIO",
-    "bio": "Desarrollador Senior SAP UI5 / Fiori con foco en BTP, CAP y Cloud Foundry. Construyo aplicaciones Fiori a medida para ecosistemas SAP enterprise, y desarrollo fullstack con React y Node.js cuando el proyecto lo pide.\n\nActualmente trabajo en dos proyectos en paralelo: apps Fiori y automatización de procesos para una petrolera, y desarrollo fullstack sobre AWS serverless para la plataforma de protección de marca de Mercado Libre.\n\nAntes de programar pasé 12 años a cargo de infraestructura IT, redes y soporte. Esa base me da contexto de negocio y de sistemas que no se aprende en un bootcamp.\n\nInglés C1 (EF SET 68/100).",
+    "bio": "Desarrollador Senior especializado en el ecosistema SAP BTP, SAPUI5 / Fiori y CAP (Cloud Application Programming Model), complementado con desarrollo fullstack moderno en React, Node.js y arquitecturas Cloud Serverless.\n\nCuento con una trayectoria previa de más de 10 años liderando infraestructura IT, redes y soporte enterprise, lo que me aporta una visión integral de arquitectura, seguridad y procesos de negocio que va mucho más allá del código.\n\nNivel de Inglés: C1 Avanzado (EF SET 68/100) — Comunicación fluida en entornos internacionales.",
     "workHistory": "Historial Laboral",
-    "fixsur": "Fixsur Inteligencia Aplicada - Buenos Aires, Argentina",
-    "pulpou": "Pulpou - Programa de Protección de Marca (Mercado Libre) - Buenos Aires, Argentina",
-    "altromondo": "Altromondo S.A — Desarrollador Senior SAP UI5 / Fiori",
-    "softtek": "Softtek - YPF - Buenos Aires, Argentina",
     "certificate": "Certificado Logali",
     "skills": "Habilidades",
     "training": "Formación y certificaciones",
-    "showMore": "Ver formación anterior"
+    "showMore": "Ver formación anterior",
+    "work": [
+      {
+        "company": "Softtek / YPF",
+        "role": "Senior SAP UI5 & Automation Developer",
+        "period": "Jul 2026 – Presente · Buenos Aires, Argentina",
+        "summary": "Desarrollo y extensión de aplicaciones Fiori a medida y automatización de procesos de negocio sobre ecosistemas SAP enterprise.",
+        "highlights": []
+      },
+      {
+        "company": "Pulpou — Brand Protection Program (Mercado Libre)",
+        "role": "Fullstack & Cloud Developer",
+        "period": "Abr 2023 – Presente · Buenos Aires, Argentina",
+        "summary": "Desarrollo fullstack y arquitectura serverless sobre AWS para la plataforma de protección de marca e IP.",
+        "highlights": [
+          {
+            "title": "Plataforma PPPI de protección de marca",
+            "detail": "Mantenimiento evolutivo y nuevas funcionalidades. Lógica de negocio en AWS Lambda y Serverless, extensión de esquemas GraphQL y persistencia en DynamoDB, mejoras de UI en React y configuración de CloudFront para distribución de contenidos.",
+            "tech": [
+              "React",
+              "Node.js",
+              "AWS Lambda",
+              "Serverless",
+              "GraphQL",
+              "DynamoDB",
+              "CloudFront"
+            ]
+          }
+        ]
+      },
+      {
+        "company": "Altromondo S.A.",
+        "role": "Senior SAP UI5 / Fiori Developer",
+        "period": "Jun 2024 – Jun 2026 · Buenos Aires, Argentina",
+        "summary": "Diseño e implementación de soluciones SAPUI5 / Fiori, integración con servicios OData y despliegues en BTP / Cloud Foundry.",
+        "highlights": [
+          {
+            "title": "Migración S/4HANA y Cloud Foundry",
+            "detail": "Migración de activos de software desde SAP ECC a S/4HANA, con transición de infraestructura de SAP Neo a Cloud Foundry. Refactorización de aplicaciones SAPUI5 para compatibilidad total en BTP CF y definición de la arquitectura de acceso en SAP Build Work Zone: sitios, páginas, espacios y matriz de seguridad por roles.",
+            "tech": [
+              "SAP BTP",
+              "SAPUI5",
+              "Cloud Foundry",
+              "SAP Build Work Zone",
+              "Role Collections"
+            ]
+          },
+          {
+            "title": "Registro cronológico de eventos",
+            "detail": "Unificación de dos aplicaciones críticas en una sola arquitectura, centralizando la lógica de negocio. Orquestación de múltiples servicios OData heterogéneos, esquema de seguridad granular y reportes dinámicos de seguimiento en tiempo real.",
+            "tech": [
+              "SAPUI5",
+              "OData",
+              "SAP BTP",
+              "Fiori"
+            ]
+          },
+          {
+            "title": "Sistema de turnos y gestión de mantenimiento",
+            "detail": "Sistema de asignación inteligente de turnos para mantenimiento preventivo y correctivo. Algoritmos de ordenamiento según consignas operativas, gráficos de análisis avanzados y orquestación del envío automático de tareas vía SAP Build Process Automation.",
+            "tech": [
+              "SAPUI5",
+              "SAP Build Process Automation",
+              "Workflows",
+              "OData"
+            ]
+          },
+          {
+            "title": "Extensibilidad y notificaciones automatizadas",
+            "detail": "Extensión de funcionalidades sobre aplicaciones productivas existentes. Gestión avanzada de instancias de Workflow y diseño de comunicación corporativa mediante plantillas HTML dinámicas para envío automatizado de mails desde el backend.",
+            "tech": [
+              "SAP Workflow",
+              "ABAP for S/4HANA",
+              "HTML",
+              "SAPUI5"
+            ]
+          }
+        ]
+      },
+      {
+        "company": "Fixsur Inteligencia Aplicada",
+        "role": "Líder de Infraestructura IT & Soporte",
+        "period": "Dic 2008 – Dic 2020 · Buenos Aires, Argentina",
+        "summary": "Gestión integral de redes, servidores, infraestructura tecnológica y soporte a operaciones.",
+        "highlights": []
+      }
+    ],
+    "showDetail": "Ver proyectos"
   },
   "footer": {
     "followMe": "Sígueme",

@@ -165,3 +165,69 @@ h3 {
 .training-more summary:focus-visible {
   color: var(--link-hover);
 }
+
+.work-entry {
+  margin-bottom: var(--space-lg);
+}
+
+.work-company {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.work-role {
+  margin: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.work-summary {
+  margin: var(--space-xs) 0 0;
+  color: var(--text-secondary);
+}
+
+.work-detail summary {
+  cursor: pointer;
+  margin-top: var(--space-sm);
+  color: var(--link);
+  font-weight: bold;
+}
+
+.work-detail summary:hover,
+.work-detail summary:focus-visible {
+  color: var(--link-hover);
+}
+
+.work-highlight {
+  padding: var(--space-sm) 0 var(--space-sm) var(--space-md);
+  border-left: 2px solid var(--border);
+  margin-top: var(--space-sm);
+}
+
+.work-highlight-title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.work-highlight-detail {
+  margin: var(--space-xs) 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.work-highlight-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.work-highlight-tech li {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-secondary);
+}

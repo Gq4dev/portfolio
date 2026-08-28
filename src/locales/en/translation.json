@@ -7,7 +7,7 @@
   },
   "banner": {
     "title": "Guillermo Quattrocchi",
-    "subtitle": "Senior SAP UI5 / Fiori Developer",
+    "subtitle": "Senior SAP UI5 / Fiori & Fullstack Developer",
     "tagline": "Custom Fiori apps for enterprise SAP ecosystems. Fullstack React & Node when the project calls for it.",
     "viewWork": "View projects",
     "downloadCV": "Download CV",
@@ -17,16 +17,99 @@
   "about": {
     "title": "ABOUT ME",
     "bioTitle": "BIO",
-    "bio": "Senior SAP UI5 / Fiori developer focused on BTP, CAP and Cloud Foundry. I build custom Fiori apps for enterprise SAP ecosystems, and work fullstack with React and Node.js when the project calls for it.\n\nI'm currently running two projects in parallel: Fiori apps and process automation for an oil & gas company, and fullstack development on AWS serverless for Mercado Libre's brand protection platform.\n\nBefore I wrote code I spent 12 years running IT infrastructure, networks and support. That background gives me business and systems context you don't get from a bootcamp.\n\nEnglish C1 (EF SET 68/100).",
+    "bio": "Senior developer specialised in the SAP BTP ecosystem, SAPUI5 / Fiori and CAP (Cloud Application Programming Model), complemented by modern fullstack development in React, Node.js and Cloud Serverless architectures.\n\nI bring a prior track record of more than 10 years leading IT infrastructure, networks and enterprise support, giving me an end-to-end view of architecture, security and business processes that goes well beyond the code.\n\nEnglish level: C1 Advanced (EF SET 68/100) — fluent communication in international settings.",
     "workHistory": "Work History",
-    "fixsur": "Fixsur Inteligencia Aplicada - Buenos Aires, Argentina",
-    "pulpou": "Pulpou - Brand Protection Program (Mercado Libre) - Buenos Aires, Argentina",
-    "altromondo": "Altromondo S.A — Senior SAP UI5 / Fiori Developer",
-    "softtek": "Softtek - YPF - Buenos Aires, Argentina",
     "certificate": "Logali Certificate",
     "skills": "Skills",
     "training": "Training & certifications",
-    "showMore": "Show earlier training"
+    "showMore": "Show earlier training",
+    "work": [
+      {
+        "company": "Softtek / YPF",
+        "role": "Senior SAP UI5 & Automation Developer",
+        "period": "Jul 2026 – Present · Buenos Aires, Argentina",
+        "summary": "Building and extending custom Fiori applications and automating business processes across enterprise SAP ecosystems.",
+        "highlights": []
+      },
+      {
+        "company": "Pulpou — Brand Protection Program (Mercado Libre)",
+        "role": "Fullstack & Cloud Developer",
+        "period": "Apr 2023 – Present · Buenos Aires, Argentina",
+        "summary": "Fullstack development and serverless AWS architecture for the brand and IP protection platform.",
+        "highlights": [
+          {
+            "title": "PPPI brand protection platform",
+            "detail": "Ongoing development and new features. Business logic on AWS Lambda and Serverless, GraphQL schema extensions and DynamoDB persistence, React UI work and CloudFront configuration for content delivery.",
+            "tech": [
+              "React",
+              "Node.js",
+              "AWS Lambda",
+              "Serverless",
+              "GraphQL",
+              "DynamoDB",
+              "CloudFront"
+            ]
+          }
+        ]
+      },
+      {
+        "company": "Altromondo S.A.",
+        "role": "Senior SAP UI5 / Fiori Developer",
+        "period": "Jun 2024 – Jun 2026 · Buenos Aires, Argentina",
+        "summary": "Design and delivery of SAPUI5 / Fiori solutions, OData service integration and BTP / Cloud Foundry deployments.",
+        "highlights": [
+          {
+            "title": "S/4HANA and Cloud Foundry migration",
+            "detail": "Migrated software assets from SAP ECC to S/4HANA, moving infrastructure from SAP Neo to Cloud Foundry. Refactored SAPUI5 applications for full BTP CF compatibility and defined the access architecture in SAP Build Work Zone: sites, pages, spaces and a role-based security matrix.",
+            "tech": [
+              "SAP BTP",
+              "SAPUI5",
+              "Cloud Foundry",
+              "SAP Build Work Zone",
+              "Role Collections"
+            ]
+          },
+          {
+            "title": "Chronological event log",
+            "detail": "Unified two business-critical applications into a single architecture with centralised business logic. Orchestration of multiple heterogeneous OData services, a granular security model and dynamic real-time tracking reports.",
+            "tech": [
+              "SAPUI5",
+              "OData",
+              "SAP BTP",
+              "Fiori"
+            ]
+          },
+          {
+            "title": "Shift scheduling and maintenance management",
+            "detail": "Intelligent shift assignment for preventive and corrective maintenance. Ordering algorithms driven by operational rules, advanced analytics charts and orchestration of automated task dispatch through SAP Build Process Automation.",
+            "tech": [
+              "SAPUI5",
+              "SAP Build Process Automation",
+              "Workflows",
+              "OData"
+            ]
+          },
+          {
+            "title": "Extensibility and automated notifications",
+            "detail": "Extended functionality over existing production applications. Advanced Workflow instance management and corporate communication design through dynamic HTML templates for automated backend mail delivery.",
+            "tech": [
+              "SAP Workflow",
+              "ABAP for S/4HANA",
+              "HTML",
+              "SAPUI5"
+            ]
+          }
+        ]
+      },
+      {
+        "company": "Fixsur Inteligencia Aplicada",
+        "role": "IT Infrastructure & Support Lead",
+        "period": "Dec 2008 – Dec 2020 · Buenos Aires, Argentina",
+        "summary": "End-to-end management of networks, servers, technology infrastructure and operations support.",
+        "highlights": []
+      }
+    ],
+    "showDetail": "View projects"
   },
   "footer": {
     "followMe": "Follow me",

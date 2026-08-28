@@ -37,6 +37,34 @@ const TrainingEntry = ({ item, label }) => (
   </>
 )
 
+const WorkEntry = ({ job, detailLabel }) => (
+  <article className="work-entry">
+    <h3 className="work-company">{job.company}</h3>
+    <p className="work-role">{job.role}</p>
+    <p className="info-date">{job.period}</p>
+    <p className="work-summary">{job.summary}</p>
+
+    {job.highlights.length > 0 && (
+      <details className="work-detail">
+        <summary>
+          {detailLabel} ({job.highlights.length})
+        </summary>
+        {job.highlights.map((h) => (
+          <div key={h.title} className="work-highlight">
+            <h4 className="work-highlight-title">{h.title}</h4>
+            <p className="work-highlight-detail">{h.detail}</p>
+            <ul className="work-highlight-tech">
+              {h.tech.map((tag) => (
+                <li key={tag}>{tag}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </details>
+    )}
+  </article>
+)
+
 export const About = () => {
   const { t } = useTranslation()
 
@@ -59,22 +87,13 @@ export const About = () => {
         <div className="info-sections">
           <div className="info-section">
             <h2 className="info-title">{t('about.workHistory')}</h2>
-            <h3 className="info-subtitle">
-              {t('about.softtek')}
-            </h3>
-            <p className="info-date">07/2026 - Today</p>
-            <h3 className="info-subtitle">
-              {t('about.pulpou')}
-            </h3>
-            <p className="info-date">04/2023 - Today</p>
-            <h3 className="info-subtitle">
-              {t('about.altromondo')}
-            </h3>
-            <p className="info-date">06/2024 - 06/2026</p>
-            <h3 className="info-subtitle">
-              {t('about.fixsur')}
-            </h3>
-            <p className="info-date">12/2008 - 12/2020</p>
+            {t('about.work', { returnObjects: true }).map((job) => (
+              <WorkEntry
+                key={job.company}
+                job={job}
+                detailLabel={t('about.showDetail')}
+              />
+            ))}
           </div>
           <div className="info-section">
             <h2 className="info-title">{t('about.training')}</h2>
