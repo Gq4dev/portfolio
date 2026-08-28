@@ -1,0 +1,53 @@
+name: CI
+
+# Validation only. Publishing stays with Hostinger's Git integration —
+# this workflow never deploys, it just fails loudly before Hostinger builds.
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Lint and build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      # next.config.js sets `distDir: dist` because that is what Hostinger
+      # serves. A version bump that changes the output directory would
+      # otherwise publish an empty site, so assert the pages exist.
+      - name: Verify static export
+        run: |
+          missing=0
+          for page in \
+            dist/index.html \
+            dist/404.html \
+            dist/portfolio/sapui5.html \
+            dist/portfolio/react.html \
+            dist/portfolio/nextjs.html
+          do
+            if [ ! -f "$page" ]; then
+              echo "::error::static export is missing $page"
+              missing=1
+            fi
+          done
+          exit $missing
