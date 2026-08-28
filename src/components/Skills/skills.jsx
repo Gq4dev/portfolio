@@ -1,42 +1,47 @@
 import React from 'react'
 import { getImageUrl } from '../../utils/publicUrl'
 
-// Groups with a `img` render the logo once on the group heading and list
-// their items as plain labels — the SAP products share a single brand mark.
-// Groups without it carry a distinct logo per item.
+// Grouped by how central each stack is to the work, not by vendor: a flat
+// grid of logos gives SAPUI5 and Terraform the same weight and dilutes the
+// specialist signal. Groups with an `img` render the logo once on the
+// heading and list their items as labels.
 const skillGroups = [
   {
-    group: 'SAP',
+    group: 'Core SAP',
     img: 'sapui5.svg',
     items: [
       { name: 'SAPUI5' },
       { name: 'Fiori' },
+      { name: 'OData' },
       { name: 'BTP' },
       { name: 'CAP' },
-      { name: 'BPA' },
+      { name: 'Cloud Foundry' },
+      { name: 'Build Work Zone' },
+      { name: 'Build Process Automation' },
+      { name: 'Workflow' },
+      { name: 'ABAP for S/4HANA' },
+      { name: 'SAP BAS' },
     ],
   },
   {
-    group: 'Frontend',
+    group: 'Fullstack',
     items: [
       { name: 'Javascript', img: 'js.svg' },
       { name: 'React', img: 'react.svg' },
-    ],
-  },
-  {
-    group: 'Backend & Data',
-    items: [
       { name: 'Node.js', img: 'nodejs.png' },
-      { name: 'MongoDB', img: 'mongodb.svg' },
       { name: 'GraphQL', img: 'GraphQL.png' },
+      { name: 'MongoDB', img: 'mongodb.svg' },
     ],
   },
   {
-    group: 'Cloud & DevOps',
+    group: 'Cloud',
+    img: 'aws.svg',
     items: [
-      { name: 'Docker', img: 'docker.png' },
-      { name: 'Terraform', img: 'terraform.png' },
-      { name: 'AWS', img: 'aws.svg' },
+      { name: 'Lambda' },
+      { name: 'API Gateway' },
+      { name: 'CloudFront' },
+      { name: 'DynamoDB' },
+      { name: 'Serverless Framework' },
     ],
   },
   {
