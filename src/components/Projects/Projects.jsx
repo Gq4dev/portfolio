@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { getDataUrl, getImageUrl } from '../../utils/publicUrl'
 
 const CATEGORIES = [
-  { id: 'sapui5', label: 'SAP UI5', icon: 'images/categories/logo-avg.png' },
+  { id: 'sapui5', label: 'SAP UI5', icon: 'images/categories/sap.svg' },
   { id: 'react', label: 'React', icon: 'images/categories/react.svg' },
   { id: 'nextjs', label: 'Next.js', icon: 'images/categories/nextjs.svg' },
 ]

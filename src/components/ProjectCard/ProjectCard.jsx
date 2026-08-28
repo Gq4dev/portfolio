@@ -1,9 +1,8 @@
 import React from 'react'
-import { FaGithub } from 'react-icons/fa'
 import { getImageUrl } from '../../utils/publicUrl'
 
 export const ProjectCard = ({ props }) => {
-  const { title, img, url, urlGit, subtitle, description, tech } = props
+  const { title, img, url, subtitle, description, tech } = props
 
   return (
     <div className="project">
@@ -24,14 +23,6 @@ export const ProjectCard = ({ props }) => {
           aria-label={`Ver demo de ${title}`}
         >
           Demo
-        </a>
-        <a
-          href={urlGit}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`Repositorio de ${title}`}
-        >
-          <FaGithub />
         </a>
       </div>
       {Array.isArray(tech) && tech.length > 0 && (

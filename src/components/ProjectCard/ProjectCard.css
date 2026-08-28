@@ -15,16 +15,9 @@
 }
 
 .project-buttons {
-    width: 120px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.project-buttons svg {
-    color: var(--accent);
-    font-size: 1.5rem;
-    margin-left: 5px;
+    gap: var(--space-sm);
 }
 
 .demo-button {
