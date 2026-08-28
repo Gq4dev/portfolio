@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { Link as LinkScroll } from 'react-scroll'
 import { useTranslation } from 'react-i18next'
 
@@ -42,6 +42,16 @@ export const Banner = () => {
               aria-label="LinkedIn"
             >
               <FaLinkedin />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/Gq4dev"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <FaGithub />
             </a>
           </li>
           <li>

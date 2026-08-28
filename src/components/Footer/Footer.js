@@ -30,7 +30,7 @@ export const Footer = () => {
               <FaLinkedin />
             </a>
             <a
-              href="https://github.com/guillote87"
+              href="https://github.com/Gq4dev"
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
