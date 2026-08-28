@@ -19,10 +19,10 @@ export const Navbar = ({ toggle }) => {
     <nav className="navbar" role="navigation" aria-label="Menú principal">
       <div className="navbar-logo">
         <Link href="/" onClick={toggleHome} aria-label="Ir al inicio">
-          <h1 className="title">
+          <div className="title">
             <span className="span1" />
             <span className="span2" />
-          </h1>
+          </div>
         </Link>
       </div>
 

@@ -15,14 +15,14 @@ const LanguageSelector = () => {
         onClick={() => changeLanguage('en')}
         aria-label="Switch to English"
       >
-        <span className="flag">🇺🇸</span> EN
+        EN
       </button>
       <button
         className={`lang-btn ${i18n.language === 'es' ? 'active' : ''}`}
         onClick={() => changeLanguage('es')}
         aria-label="Cambiar a Español"
       >
-        <span className="flag">🇦🇷</span> ES
+        ES
       </button>
     </div>
   );

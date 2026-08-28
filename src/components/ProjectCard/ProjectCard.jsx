@@ -2,40 +2,62 @@ import React from 'react'
 import { getImageUrl } from '../../utils/publicUrl'
 
 export const ProjectCard = ({ props }) => {
-  const { title, img, url, subtitle, description, tech } = props
+  const { title, img, url, client, subtitle, description, tech, deploy } = props
 
   return (
-    <div className="project">
-      <h3 className="project-title">{title}</h3>
-      <img
-        src={getImageUrl(`images/projects/${img}`)}
-        alt={title}
-        loading="lazy"
-        width={400}
-        height={250}
-      />
-      <div className="project-buttons">
-        <a
-          className="demo-button"
-          href={url}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`Ver demo de ${title}`}
-        >
-          Demo
-        </a>
+    <article className="project">
+      <div className="project-media">
+        {img ? (
+          <img
+            src={getImageUrl(`images/projects/${img}`)}
+            alt={title}
+            loading="lazy"
+            width={800}
+            height={500}
+          />
+        ) : (
+          // Client work built inside customer environments has no capture to
+          // show, so the slot states that rather than sitting empty.
+          <span className="project-media-empty">sin captura disponible</span>
+        )}
+        {description && (
+          <div className="project-overlay">
+            <p>{description}</p>
+          </div>
+        )}
       </div>
-      {Array.isArray(tech) && tech.length > 0 && (
-        <div className="project-tech">
-          {tech.map((t) => (
-            <span key={t} className="project-tech-tag">
-              {t}
-            </span>
-          ))}
+
+      <div className="project-body">
+        <div className="project-head">
+          <h3 className="project-title">{title}</h3>
+          {deploy && <span className="project-year">{deploy}</span>}
         </div>
-      )}
-      <h3 className="project-subtitle">{subtitle}</h3>
-      <p className="project-description">{description}</p>
-    </div>
+
+        {(client || subtitle) && (
+          <p className="project-role">{client || subtitle}</p>
+        )}
+        {description && <p className="project-description">{description}</p>}
+
+        {Array.isArray(tech) && tech.length > 0 && (
+          <ul className="project-tech">
+            {tech.map((t) => (
+              <li key={t} className="project-tech-tag">
+                {t}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <div className="project-links">
+          {url ? (
+            <a href={url} target="_blank" rel="noreferrer">
+              Ver demo ↗
+            </a>
+          ) : (
+            <span className="project-private">Sin demo pública</span>
+          )}
+        </div>
+      </div>
+    </article>
   )
 }

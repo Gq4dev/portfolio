@@ -1,62 +1,169 @@
-
-.projects-title {
-    font-size: 3rem;
-    padding:1rem
+.project {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color 240ms ease, transform 240ms ease;
 }
 
-.project-title {
-    font-size: 1.5rem;
-    color: var(--accent);
+.project:hover,
+.project:focus-within {
+    border-color: var(--accent);
+    transform: translateY(-3px);
 }
 
-.project img {
+.project-media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    /* Diagonal hatch stands in for a screenshot without pretending to be one. */
+    background-image: repeating-linear-gradient(
+        135deg,
+        var(--bg-secondary) 0px,
+        var(--bg-secondary) 7px,
+        var(--bg-primary) 7px,
+        var(--bg-primary) 14px
+    );
+}
+
+.project-media img {
     width: 100%;
-    border: 4px darkmagenta solid
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
 }
 
-.project-buttons {
+.project-media-empty {
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: var(--space-lg);
+    background-image: linear-gradient(
+        to top,
+        rgba(10, 10, 10, 0.96),
+        rgba(10, 10, 10, 0.72)
+    );
+    opacity: 0;
+    transition: opacity 240ms ease;
+    pointer-events: none;
+}
+
+.project:hover .project-overlay,
+.project:focus-within .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay p {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.7;
+    color: #e8e9ec;
+}
+
+.project-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-lg);
+}
+
+.project-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
     gap: var(--space-sm);
 }
 
-.demo-button {
-    text-decoration: none;
-    font-weight: bold;
-    border: none;
-    background-color: silver;
-    padding: 5px 25px;
-    border-radius: 5px;
+.project-title {
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
 }
 
-.demo-button:hover {
-    background-color: var(--accent);
+.project-year {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    white-space: nowrap;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.project-role {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.project-description {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
 }
 
 .project-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem;
-    margin: 0.5rem 0;
+    gap: var(--space-xs);
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
 .project-tech-tag {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.5rem;
-    background: rgba(255, 165, 0, 0.2);
-    color: inherit;
-    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 0.25rem 0.55rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: var(--text-secondary);
 }
-@media screen and (min-width: 768px) {
 
-    .project {
-        padding: 10px;
-        width: 400px;
-    }
-    .project img {
-        border: 2px darkmagenta solid
-    }
+.project-links {
+    display: flex;
+    gap: var(--space-lg);
+    margin-top: var(--space-xs);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+}
 
-    .projects-title {
-        margin-left: 60px;
-    }
+.project-links a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+.project-links a:hover,
+.project-links a:focus-visible {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+.project-private {
+    color: var(--text-secondary);
+    opacity: 0.65;
 }

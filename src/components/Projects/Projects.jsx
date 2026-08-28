@@ -2,55 +2,75 @@ import React, { useState, useEffect } from 'react'
 import { ProjectCard } from '../ProjectCard/ProjectCard'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { getDataUrl, getImageUrl } from '../../utils/publicUrl'
+import { useTranslation } from 'react-i18next'
+import { getDataUrl } from '../../utils/publicUrl'
 
 const CATEGORIES = [
-  { id: 'sapui5', label: 'SAP UI5', icon: 'images/categories/sap.svg' },
-  { id: 'react', label: 'React', icon: 'images/categories/react.svg' },
-  { id: 'nextjs', label: 'Next.js', icon: 'images/categories/nextjs.svg' },
+  { id: 'sapui5', label: 'SAP UI5' },
+  { id: 'react', label: 'React' },
+  { id: 'nextjs', label: 'Next.js' },
 ]
 
 export const Projects = ({ initialCat }) => {
   const router = useRouter()
-  const [projects, setProjects] = useState([])
+  const { t } = useTranslation()
+  const [allProjects, setAllProjects] = useState([])
   // The route is the source of truth for the active filter, so derive it
   // during render rather than mirroring it into state from an effect.
-  const category = router.query.cat || initialCat
+  // No category means the home page, which shows everything.
+  const category = router.query.cat || initialCat || null
 
+  // Fetched once: switching filters should not re-download a file whose
+  // contents we already hold.
   useEffect(() => {
     fetch(getDataUrl('data/projects.json'))
       .then((response) => response.json())
-      .then((data) => setProjects(data.filter((p) => p.category === category)))
+      .then(setAllProjects)
       .catch((err) => console.error('Error al cargar proyectos:', err))
-  }, [category])
+  }, [])
+
+  const projects = category
+    ? allProjects.filter((p) => p.category === category)
+    : allProjects
 
   return (
-    <>
-      <section className="categories-container" id="portfolio">
-        <h2 className="categories-title">Portfolio</h2>
-        <div className="portfolio-icons">
-          <ul role="navigation" aria-label="Filtrar por tecnología">
-            {CATEGORIES.map((cat) => (
-              <li key={cat.id}>
-                <Link href={`/portfolio/${cat.id}`} aria-label={cat.label}>
-                  <img
-                    src={getImageUrl(cat.icon)}
-                    alt=""
-                    width={50}
-                    height={50}
-                    loading="lazy"
-                  />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="projects">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} props={project} />
-          ))}
-        </div>
-      </section>
-    </>
+    <section className="portfolio" id="portfolio">
+      <header className="portfolio-head">
+        <h2 className="portfolio-heading">{t('portfolio.heading')}</h2>
+      </header>
+
+      <nav className="portfolio-tabs" aria-label="Filtrar proyectos por tecnología">
+        <Link
+          href="/#portfolio"
+          className={`portfolio-tab${category ? '' : ' is-active'}`}
+          aria-current={category ? undefined : 'page'}
+        >
+          {t('portfolio.all')}
+          {allProjects.length > 0 && ` (${allProjects.length})`}
+        </Link>
+        {CATEGORIES.map((cat) => {
+          const isActive = cat.id === category
+          const count = allProjects.filter((p) => p.category === cat.id).length
+
+          return (
+            <Link
+              key={cat.id}
+              href={`/portfolio/${cat.id}`}
+              className={`portfolio-tab${isActive ? ' is-active' : ''}`}
+              aria-current={isActive ? 'page' : undefined}
+            >
+              {cat.label}
+              {count > 0 && ` (${count})`}
+            </Link>
+          )
+        })}
+      </nav>
+
+      <div className="portfolio-grid">
+        {projects.map((project) => (
+          <ProjectCard key={project.title} props={project} />
+        ))}
+      </div>
+    </section>
   )
 }

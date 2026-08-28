@@ -7,6 +7,10 @@
   --space-xl: 2rem;
   --space-2xl: 3rem;
 
+  /* System stack: the mono is used for labels and chips only, which
+     does not justify shipping another webfont. */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
   /* Tema oscuro (default) */
   --bg-primary: #0a0a0a;
   --bg-secondary: #1a1a1a;

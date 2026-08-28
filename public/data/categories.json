@@ -1,5 +1,0 @@
-[
-  {"title":"SAP Ui5","category":"sapui5","backImage":"images/categories/bgSap.jpg","frontImage":"images/categories/sap.svg"},
-  {"title":"React","category":"react","backImage":"images/categories/bgreact.jpg","frontImage":"images/categories/react.svg"},
-  {"title":"Next.js","category":"nextjs","backImage":"images/categories/bgNextjs.jpg","frontImage":"images/categories/nextjs.svg"}
-]

@@ -70,7 +70,7 @@ export const About = () => {
   return (
     <div>
       <section className="about" id="about">
-        <h1 className="about-title">{t('about.title')}</h1>
+        <h2 className="about-title">{t('about.title')}</h2>
         <div className="about-main">
           <div className="about-bio">
             <h2 className="bio-title">{t('about.bioTitle')}</h2>

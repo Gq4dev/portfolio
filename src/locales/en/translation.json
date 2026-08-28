@@ -120,5 +120,9 @@
   "sidebar": {
     "navMenu": "Navigation menu",
     "closeMenu": "Close menu"
+  },
+  "portfolio": {
+    "heading": "Portfolio",
+    "all": "All"
   }
 }

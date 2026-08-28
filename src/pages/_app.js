@@ -4,14 +4,13 @@ import '../components/Navbar/Navbar.css'
 import '../components/Sidebar/Sidebar.css'
 import '../components/Banner/Banner.css'
 import '../components/About/About.css'
-import '../components/Categories/Categories.css'
-import '../components/CategoryCard/CategoryCard.css'
 import '../components/Projects/Projects.css'
 import '../components/ProjectCard/ProjectCard.css'
 import '../components/Footer/Footer.css'
 import '../components/LanguageSelector.css'
 import '../i18n'
 import { useState } from 'react'
+import Head from 'next/head'
 import { ThemeProvider } from '../context/ThemeContext'
 import { Navbar } from '../components/Navbar/Navbar'
 import { Footer } from '../components/Footer/Footer'
@@ -33,6 +32,12 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ThemeProvider>
+      {/* Default document title. next/head belongs here rather than in
+          _document, which Next does not render per navigation. Pages may
+          override it. */}
+      <Head>
+        <title>Guillermo Quattrocchi | Senior SAP BTP Developer</title>
+      </Head>
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
       <Component {...pageProps} />
