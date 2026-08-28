@@ -27,7 +27,7 @@
 
 .icons-img {
   width: 40px;
-  margin-right: 15px;
+  height: auto;
 }
 
 .bio-title {
@@ -52,9 +52,43 @@
 }
 
 .skills {
-  width: 350px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.skill-group-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-lg);
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+/* Groups whose logo lives on the heading list their items as plain labels. */
+.skill-list--labels {
+  padding-left: calc(40px + var(--space-md));
+}
+
+.skill-list--labels .skill-item {
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--border);
+  border-radius: var(--space-xs);
 }
 
 h3 {
