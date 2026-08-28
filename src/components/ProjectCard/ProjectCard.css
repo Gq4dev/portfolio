@@ -60,3 +60,9 @@
         margin-left: 60px;
     }
 }
+.project-client {
+    margin: 0 0 0.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+}
