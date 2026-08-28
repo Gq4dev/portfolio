@@ -13,7 +13,7 @@
     "downloadCVAria": "Download CV in PDF"
   },
   "about": {
-    "title": "ABOUT ME",
+    "title": "About me",
     "bioTitle": "BIO",
     "bio": "Senior developer specialised in the SAP BTP ecosystem, SAPUI5 / Fiori and CAP (Cloud Application Programming Model), complemented by modern fullstack development in React, Node.js and Cloud Serverless architectures.\n\nI bring a prior track record of more than 10 years leading IT infrastructure, networks and enterprise support, giving me an end-to-end view of architecture, security and business processes that goes well beyond the code.",
     "workHistory": "Work History",
