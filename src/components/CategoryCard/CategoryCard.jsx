@@ -7,7 +7,7 @@ export const CategoryCard = ({ props }) => {
 
   return (
     <Link href={`/portfolio/${category}`}>
-      <article>
+      <article className="category-card">
         <img
           src={getImageUrl(backImage)}
           alt=""

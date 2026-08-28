@@ -1,11 +1,11 @@
-article {
+.category-card {
     position: relative;
     width: 300px;
     height: 200px;
     transition: all .3s ease;
 }
 
-article img:first-child {
+.category-card img:first-child {
     box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
     border-radius: 40px;
     object-fit: cover;
@@ -13,7 +13,7 @@ article img:first-child {
     height: 100%;
 }
 
-article img:last-child {
+.category-card img:last-child {
     position: absolute;
     width: 120px;
     bottom: 25%;
@@ -28,7 +28,7 @@ article img:last-child {
     display: none;
 }
 
-article::before {
+.category-card::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -43,7 +43,7 @@ article::before {
     transition: all .3s ease
 }
 
-article:hover img:last-child {
+.category-card:hover img:last-child {
     opacity: 1;
     transform: scale(120%)
 }
@@ -52,14 +52,14 @@ article:hover img:last-child {
 
 
 @media screen and (min-width: 768px) {
-    article {
+    .category-card {
         position: relative;
         width: 300px;
         height: 300px;
         transition: all .3s ease;
     }
 
-    article img:first-child {
+    .category-card img:first-child {
         box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
         border-radius: 4px;
         object-fit: cover;
@@ -67,7 +67,7 @@ article:hover img:last-child {
         height: 100%;
     }
 
-    article img:last-child {
+    .category-card img:last-child {
         position: absolute;
         width: 170px;
         bottom: 40%;
@@ -88,15 +88,15 @@ article:hover img:last-child {
         display: none;
     }
 
-    article:hover {
+    .category-card:hover {
         transform: perspective(250px) rotateX(10deg) translateY(-5%) translateZ(0)
     }
 
-    article:hover .category-title {
+    .category-card:hover .category-title {
         display: block
     }
 
-    article::before {
+    .category-card::before {
         content: '';
         position: absolute;
         bottom: 0;
@@ -111,11 +111,11 @@ article:hover img:last-child {
         transition: all .3s ease
     }
 
-    article:hover::before {
+    .category-card:hover::before {
         opacity: 1
     }
 
-    article:hover img:last-child {
+    .category-card:hover img:last-child {
         opacity: 0;
         transform: translateY(10%);
     }
