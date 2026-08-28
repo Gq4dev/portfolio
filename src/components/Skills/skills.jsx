@@ -4,12 +4,17 @@ import { getImageUrl } from '../../utils/publicUrl'
 const skills = [
   { name: 'Javascript', img: 'js.svg' },
   { name: 'SAPUI 5', img: 'sapui5.svg' },
+  { name: 'SAP Fiori', img: 'sapui5.svg' },
+  { name: 'SAP BTP', img: 'sapui5.svg' },
+  { name: 'SAP CAP', img: 'sapui5.svg' },
+  { name: 'SAP BPA', img: 'sapui5.svg' },
   { name: 'React', img: 'react.svg' },
   { name: 'Node Js', img: 'nodejs.png' },
   { name: 'MongoDB', img: 'mongodb.svg' },
   { name: 'GraphQL', img: 'GraphQL.png' },
   { name: 'Docker', img: 'docker.png' },
   { name: 'Terraform', img: 'terraform.png' },
+  { name: 'AWS', img: 'aws.svg' },
 ]
 
 export const Skills = () => {
