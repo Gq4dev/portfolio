@@ -1,8 +1,9 @@
 /**
- * Base URL para assets y datos en public/.
- * Usar en todas las rutas para que funcionen en cualquier nivel de la app (ej. /portfolio/react).
+ * Root-relative URL for assets and data served from public/.
+ * Keeping paths absolute lets them resolve from any route depth
+ * (e.g. /portfolio/react).
  */
-export const PUBLIC_URL = '';
+const toPublicPath = (path) => `/${path}`.replace(/\/+/g, '/')
 
-export const getDataUrl = (path) => `${PUBLIC_URL}/${path}`.replace(/\/+/g, '/');
-export const getImageUrl = (path) => `${PUBLIC_URL}/${path}`.replace(/\/+/g, '/');
+export const getDataUrl = toPublicPath
+export const getImageUrl = toPublicPath

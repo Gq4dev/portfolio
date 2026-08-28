@@ -2,8 +2,7 @@ import React from 'react'
 import { Skills } from '../Skills/skills'
 import { useTranslation } from 'react-i18next'
 
-const PUBLIC_URL = process.env.PUBLIC_URL || ''
-const PDF_PATH = `${PUBLIC_URL}/files/MasterSapui5.pdf`.replace(/\/+/g, '/')
+const PDF_PATH = '/files/MasterSapui5.pdf'
 
 export const About = () => {
   const { t } = useTranslation()
