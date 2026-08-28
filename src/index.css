@@ -15,6 +15,10 @@
   --accent: #ff8c00;
   --accent-hover: #ffa500;
   --border: rgba(255, 140, 0, 0.3);
+  /* Link colors are theme-specific: no single hue clears WCAG AA (4.5:1)
+     against both the dark and the light background. */
+  --link: #ff8c00;
+  --link-hover: #ffa500;
 }
 
 [data-theme="light"] {
@@ -25,6 +29,8 @@
   --accent: #e67e00;
   --accent-hover: #d35400;
   --border: rgba(230, 126, 0, 0.4);
+  --link: #b35900;
+  --link-hover: #8a4400;
 }
 
 @media (prefers-reduced-motion: reduce) {

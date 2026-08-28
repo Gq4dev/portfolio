@@ -113,7 +113,13 @@ h3 {
 
 .certificate {
   font-weight: bold;
-  color: blue;
+  color: var(--link);
+  text-decoration: underline;
+}
+
+.certificate:hover,
+.certificate:focus-visible {
+  color: var(--link-hover);
 }
 
 @media screen and (min-width: 768px) {
