@@ -13,7 +13,7 @@
 
   /* Shared section width: sections used to disagree (90% vs 1240px),
      which left their headings starting at different left edges. */
-  --container: min(1240px, 90%);
+  --container: 90%;
 
   /* Tema oscuro (default) */
   --bg-primary: #0a0a0a;
