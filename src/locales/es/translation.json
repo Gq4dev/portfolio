@@ -32,10 +32,9 @@
     "english": "Inglés",
     "englishDesc": "Certificado EF SET English 68/100 (C1 Advanced)",
     "certifications": "Certificaciones",
-    "sapAbap": "SAP ABAP RESTFUL Iniciación - LOGALI Group",
-    "webinar1": "WEBINAR SAP FIORI SAPUI5 - Desarrollo de aplicaciones - LOGALI Group",
-    "webinar2": "Desarrollo de aplicaciones FIORI con SAPUI5 en SAP BAS - LOGALI Group",
-    "webinar3": "WEBINAR SAP FIORI Gráficos Vizframe con SAPUI5 - LOGALI Group"
+    "btpCap": "SAP BTP CAP - Cloud Application Programming Model - Logali Group",
+    "btpAdmin": "SAP BTP - Administración, Seguridad y Conectividad - Logali Group",
+    "fioriBas": "Desarrollo de aplicaciones FIORI con SAPUI5 en SAP BAS - Logali Group"
   },
   "footer": {
     "followMe": "Sígueme",

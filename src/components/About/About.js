@@ -47,11 +47,11 @@ export const About = () => {
           <div className="info-section">
             <h2 className="info-title">Education</h2>
             <h3 className="info-subtitle">
-              Taller Automatización SAP con n8n e IA Agéntica
+              Taller Automatización SAP con n8n e IA Agéntica - Logali Group
             </h3>
             <p className="info-date">6/2026</p>
             <h3 className="info-subtitle">
-              SAP BTP CAP - Cloud Application Programming Model
+              SAP BTP CAP - Cloud Application Programming Model - Logali Group
             </h3>
             <p className="info-date">5/2026</p>
             <h3 className="info-subtitle">
@@ -103,18 +103,16 @@ export const About = () => {
           </div>
           <div className="info-section">
             <h2 className="info-title">{t('about.certifications')}</h2>
-            <h3 className="info-subtitle">{t('about.sapAbap')}</h3>
-            <p className="info-date">2022</p>
             <h3 className="info-subtitle">
-              {t('about.webinar1')}
+              {t('about.btpCap')}
             </h3>
-            <p className="info-date">2022</p>
+            <p className="info-date">5/2026</p>
             <h3 className="info-subtitle">
-              {t('about.webinar2')}
+              {t('about.btpAdmin')}
             </h3>
-            <p className="info-date">2022</p>
+            <p className="info-date">4/2026</p>
             <h3 className="info-subtitle">
-              {t('about.webinar3')}
+              {t('about.fioriBas')}
             </h3>
             <p className="info-date">2022</p>
           </div>
