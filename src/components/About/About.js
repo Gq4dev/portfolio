@@ -6,10 +6,6 @@ const PDF_PATH = '/files/MasterSapui5.pdf'
 
 export const About = () => {
   const { t } = useTranslation()
-  const onResumeClick = (e) => {
-    e.preventDefault()
-    window.open(PDF_PATH)
-  }
 
   return (
     <div>
@@ -63,8 +59,9 @@ export const About = () => {
             <p className="info-date">5/2023</p>
             <a
               className="certificate"
-              href="/"
-              onClick={onResumeClick}
+              href={PDF_PATH}
+              target="_blank"
+              rel="noreferrer"
               aria-label={t('about.certificate')}
             >
               <p className="info-subtitle">{t('about.certificate')}</p>
